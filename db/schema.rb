@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126145709) do
+ActiveRecord::Schema.define(version: 20141126201018) do
 
   create_table "colorgems", force: true do |t|
     t.string   "gemstonetype"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141126145709) do
     t.boolean  "gemscertificate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "owner"
   end
 
   create_table "users", force: true do |t|

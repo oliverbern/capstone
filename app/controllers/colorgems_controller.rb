@@ -26,6 +26,8 @@ class ColorgemsController < ApplicationController
   def create
     @colorgem = Colorgem.new(colorgem_params)
 
+    @colorgem.owner = current_user.id
+
     respond_to do |format|
       if @colorgem.save
         format.html { redirect_to @colorgem, notice: 'Colorgem was successfully created.' }
