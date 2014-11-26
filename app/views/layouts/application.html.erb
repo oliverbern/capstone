@@ -19,13 +19,13 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-      	<img alt="flipgemstones" src="flipgemstones.png"></a>
+      	<img alt="flipgemstones" src="app/assets/images/flipgemstones.png"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Colored Gemstones", root_path %></li>
+        <li><%= link_to "Colored Gemstones", colorgems_path %></li>
         <li><%= link_to "Colored Diamonds", root_path %></li>
         <li><%= link_to "Diamonds", root_path %></li>
         <li><%= link_to "Jewellery", root_path %></li>
@@ -42,9 +42,15 @@
 		<p class="notice"><%= notice %></p>
     	<p class="alert"><%= alert %></p>
 	</header>
-	<body>
-		<div class="container">
+
+
+	<div class="container">
+		<body>
 			<%= yield %>
-		</div>
-	</body>
+		</body>
+		
+		<footer>
+            <p>Copyright &copy; Oliver Jones 2014</p>
+        </footer>
+    </div>
 </html>
