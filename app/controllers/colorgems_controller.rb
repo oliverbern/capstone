@@ -5,6 +5,11 @@ class ColorgemsController < ApplicationController
   # GET /colorgems.json
   def index
     @colorgems = Colorgem.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @colorgems.to_csv}
+      format.xls { send_data @colorgems.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /colorgems/1

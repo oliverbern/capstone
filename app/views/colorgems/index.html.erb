@@ -31,5 +31,10 @@
 </table>
 
 <br>
+<p>
+  Download:
+  <%= link_to "CSV", colorgems_path(format: "csv") %> |
+  <%= link_to "Excel", colorgems_path(format: "xls") %>
+</p>
 
 <%= link_to 'New Colorgem', new_colorgem_path %>
