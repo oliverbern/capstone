@@ -6,51 +6,56 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-	<header>
-		<div class="container">
-		<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">
-      	<img alt="flipgemstones" src="app/assets/images/flipgemstones.png"></a>
-    </div>
+<header>
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+           <img alt="flipgemstones" src="app/assets/images/flipgemstones.png"></a>
+         </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Colored Gemstones", colorgems_path %></li>
-        <li><%= link_to "Colored Diamonds", root_path %></li>
-        <li><%= link_to "Diamonds", root_path %></li>
-        <li><%= link_to "Jewellery", root_path %></li>
-       </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-        <li><%= link_to "Create New Account", new_user_registration_path %></li>  
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Colored Gemstones", colorgems_path %></li>
+            <li><%= link_to "Colored Diamonds", root_path %></li>
+            <li><%= link_to "Diamonds", root_path %></li>
+            <li><%= link_to "Jewellery", root_path %></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+            <li><%= link_to "My Listings", welcome_ownerlist_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Create New Account", new_user_registration_path %></li>  
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</header>
+
+
+<div class="container">
+  <body>
+   <%= yield %>
+ </body>
+ 
+ <footer>
+  <p>Copyright &copy; Oliver Jones 2014</p>
+</footer>
 </div>
-		<p class="notice"><%= notice %></p>
-    	<p class="alert"><%= alert %></p>
-	</header>
-
-
-	<div class="container">
-		<body>
-			<%= yield %>
-		</body>
-		
-		<footer>
-            <p>Copyright &copy; Oliver Jones 2014</p>
-        </footer>
-    </div>
 </html>

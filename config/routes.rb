@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'welcome/upgrade'
 
+  get 'welcome/ownerlist'
+
 
   root 'welcome#home'
 
