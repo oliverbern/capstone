@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :colorgems
+  resources :colorgems do
+    collection { post :import }
+  end
 
   get 'welcome/home'
 

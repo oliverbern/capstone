@@ -37,4 +37,12 @@
   <%= link_to "Excel", colorgems_path(format: "xls") %>
 </p>
 
+<h2>Import Colored Gems</h2>
+
+<%= form_tag import_colorgems_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+  <% end %>
+
+
 <%= link_to 'New Colorgem', new_colorgem_path %>

@@ -12,6 +12,11 @@ class ColorgemsController < ApplicationController
     end
   end
 
+  def import
+    Colorgem.import(params[:file])
+    redirect_to root_url, notice: "Products imported."
+  end
+
   # GET /colorgems/1
   # GET /colorgems/1.json
   def show
