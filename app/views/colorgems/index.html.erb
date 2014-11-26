@@ -1,0 +1,39 @@
+<h1>Listing colorgems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gemstonetype</th>
+      <th>Color</th>
+      <th>Shape</th>
+      <th>Length</th>
+      <th>Height</th>
+      <th>Width</th>
+      <th>Weight</th>
+      <th>Gemscertificate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colorgems.each do |colorgem| %>
+      <tr>
+        <td><%= colorgem.gemstonetype %></td>
+        <td><%= colorgem.color %></td>
+        <td><%= colorgem.shape %></td>
+        <td><%= colorgem.length %></td>
+        <td><%= colorgem.height %></td>
+        <td><%= colorgem.width %></td>
+        <td><%= colorgem.weight %></td>
+        <td><%= colorgem.gemscertificate %></td>
+        <td><%= link_to 'Show', colorgem %></td>
+        <td><%= link_to 'Edit', edit_colorgem_path(colorgem) %></td>
+        <td><%= link_to 'Destroy', colorgem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Colorgem', new_colorgem_path %>

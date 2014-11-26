@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gemstonetype: MyString
+  color: MyString
+  shape: MyString
+  length: 9.99
+  height: 9.99
+  width: 9.99
+  weight: 9.99
+  gemscertificate: false
+
+two:
+  gemstonetype: MyString
+  color: MyString
+  shape: MyString
+  length: 9.99
+  height: 9.99
+  width: 9.99
+  weight: 9.99
+  gemscertificate: false
