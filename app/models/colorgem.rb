@@ -3,8 +3,6 @@ class Colorgem < ActiveRecord::Base
 
 	validates_presence_of :owner
 
-
-
 	def self.to_csv(options = {})
 		CSV.generate(options) do |csv|
 			csv << column_names

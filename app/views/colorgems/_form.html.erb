@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :gemstonetype %><br>
-    <%= f.text_field :gemstonetype %>
+    <%= f.select(:gemstonetype, options_for_select([['Ruby', 'Ruby'], ['Sapphire', 'Sapphire'], ["Opal", "Opal"], ["Citrin"]])) %>
   </div>
   <div class="field">
     <%= f.label :color %><br>
