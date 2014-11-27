@@ -4,7 +4,8 @@ class ColorgemsController < ApplicationController
   # GET /colorgems
   # GET /colorgems.json
   def index
-    @colorgems = Colorgem.all
+    @search = Colorgem.search(params[:q])
+    @colorgems = @search.result
     respond_to do |format|
       format.html
       format.csv { send_data @colorgems.to_csv}
