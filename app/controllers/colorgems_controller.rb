@@ -15,7 +15,11 @@ class ColorgemsController < ApplicationController
 
   def import
     Colorgem.import(params[:file])
-    redirect_to root_url, notice: "Products imported."
+    redirect_to colorgems_path, notice: "Products imported."
+  end
+
+  def accessible_attributes
+ [gemstonetype, color, shape, length, height, width, weight, gemscertificate]
   end
 
   # GET /colorgems/1
