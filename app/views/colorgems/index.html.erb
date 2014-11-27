@@ -31,7 +31,7 @@
     <tbody>
       <% @colorgems.each do |colorgem| %>
       <tr>
-        <td><%= colorgem.gemstonetype %></td>
+        <td><%= link_to colorgem.gemstonetype, colorgem %></td>
         <td><%= colorgem.color %></td>
         <td><%= colorgem.shape %></td>
         <td><%= colorgem.length %></td>
