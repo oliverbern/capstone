@@ -1,0 +1,73 @@
+<%= form_for(@diamond) do |f| %>
+  <% if @diamond.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@diamond.errors.count, "error") %> prohibited this diamond from being saved:</h2>
+
+      <ul>
+      <% @diamond.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :clarity %><br>
+    <%= f.text_field :clarity %>
+  </div>
+  <div class="field">
+    <%= f.label :treatment %><br>
+    <%= f.text_field :treatment %>
+  </div>
+  <div class="field">
+    <%= f.label :shape %><br>
+    <%= f.text_field :shape %>
+  </div>
+  <div class="field">
+    <%= f.label :condgirdle %><br>
+    <%= f.text_field :condgirdle %>
+  </div>
+  <div class="field">
+    <%= f.label :condculet %><br>
+    <%= f.text_field :condculet %>
+  </div>
+  <div class="field">
+    <%= f.label :sizeculet %><br>
+    <%= f.text_field :sizeculet %>
+  </div>
+  <div class="field">
+    <%= f.label :conditioncut %><br>
+    <%= f.text_field :conditioncut %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br>
+    <%= f.text_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br>
+    <%= f.text_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

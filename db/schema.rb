@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127191104) do
+ActiveRecord::Schema.define(version: 20141127230240) do
+
+  create_table "colordiamonds", force: true do |t|
+    t.decimal  "weight"
+    t.string   "color"
+    t.string   "clarity"
+    t.string   "treatment"
+    t.string   "shape"
+    t.string   "condgirdle"
+    t.string   "condculet"
+    t.string   "sizeculet"
+    t.string   "conditioncut"
+    t.decimal  "length"
+    t.decimal  "width"
+    t.decimal  "height"
+    t.text     "description"
+    t.string   "intensitecolor"
+    t.string   "bycolor1"
+    t.string   "bycolor2"
+    t.boolean  "diamondcertificate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "colorgems", force: true do |t|
     t.string   "gemstonetype"
@@ -29,6 +51,40 @@ ActiveRecord::Schema.define(version: 20141127191104) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "diamonds", force: true do |t|
+    t.decimal  "weight"
+    t.string   "color"
+    t.string   "clarity"
+    t.string   "treatment"
+    t.string   "shape"
+    t.string   "condgirdle"
+    t.string   "condculet"
+    t.string   "sizeculet"
+    t.string   "conditioncut"
+    t.decimal  "length"
+    t.decimal  "width"
+    t.decimal  "height"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jewelleries", force: true do |t|
+    t.string   "title"
+    t.string   "stone1"
+    t.string   "stone2"
+    t.string   "stone3"
+    t.string   "material1"
+    t.string   "material2"
+    t.string   "material3"
+    t.text     "description"
+    t.boolean  "certificate"
+    t.string   "companymade"
+    t.integer  "owner"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

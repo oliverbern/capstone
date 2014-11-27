@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  stone1: MyString
+  stone2: MyString
+  stone3: MyString
+  material1: MyString
+  material2: MyString
+  material3: MyString
+  description: MyText
+  certificate: false
+  companymade: MyString
+  owner: 1
+
+two:
+  title: MyString
+  stone1: MyString
+  stone2: MyString
+  stone3: MyString
+  material1: MyString
+  material2: MyString
+  material3: MyString
+  description: MyText
+  certificate: false
+  companymade: MyString
+  owner: 1

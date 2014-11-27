@@ -32,6 +32,7 @@ class Colorgem < ActiveRecord::Base
 			row = Hash[[header, spreadsheet.row(i)].transpose]
 			colorgem = find_by_id(row["id"]) || new
 			colorgem.attributes = row.to_hash.slice(*Colorgem.attribute_names())
+			#overwrite all colorgems.owner = current_owner
 			colorgem.save!
 		end
 	end

@@ -1,0 +1,2 @@
+module ColordiamondsHelper
+end

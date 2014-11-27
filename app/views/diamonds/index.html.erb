@@ -1,0 +1,51 @@
+<h1>Listing diamonds</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Color</th>
+      <th>Clarity</th>
+      <th>Treatment</th>
+      <th>Shape</th>
+      <th>Condgirdle</th>
+      <th>Condculet</th>
+      <th>Sizeculet</th>
+      <th>Conditioncut</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diamonds.each do |diamond| %>
+      <tr>
+        <td><%= diamond.weight %></td>
+        <td><%= diamond.color %></td>
+        <td><%= diamond.clarity %></td>
+        <td><%= diamond.treatment %></td>
+        <td><%= diamond.shape %></td>
+        <td><%= diamond.condgirdle %></td>
+        <td><%= diamond.condculet %></td>
+        <td><%= diamond.sizeculet %></td>
+        <td><%= diamond.conditioncut %></td>
+        <td><%= diamond.length %></td>
+        <td><%= diamond.width %></td>
+        <td><%= diamond.weight %></td>
+        <td><%= diamond.height %></td>
+        <td><%= diamond.description %></td>
+        <td><%= link_to 'Show', diamond %></td>
+        <td><%= link_to 'Edit', edit_diamond_path(diamond) %></td>
+        <td><%= link_to 'Destroy', diamond, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diamond', new_diamond_path %>

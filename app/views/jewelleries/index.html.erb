@@ -1,0 +1,45 @@
+<h1>Listing jewelleries</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Stone1</th>
+      <th>Stone2</th>
+      <th>Stone3</th>
+      <th>Material1</th>
+      <th>Material2</th>
+      <th>Material3</th>
+      <th>Description</th>
+      <th>Certificate</th>
+      <th>Companymade</th>
+      <th>Owner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jewelleries.each do |jewellery| %>
+      <tr>
+        <td><%= jewellery.title %></td>
+        <td><%= jewellery.stone1 %></td>
+        <td><%= jewellery.stone2 %></td>
+        <td><%= jewellery.stone3 %></td>
+        <td><%= jewellery.material1 %></td>
+        <td><%= jewellery.material2 %></td>
+        <td><%= jewellery.material3 %></td>
+        <td><%= jewellery.description %></td>
+        <td><%= jewellery.certificate %></td>
+        <td><%= jewellery.companymade %></td>
+        <td><%= jewellery.owner %></td>
+        <td><%= link_to 'Show', jewellery %></td>
+        <td><%= link_to 'Edit', edit_jewellery_path(jewellery) %></td>
+        <td><%= link_to 'Destroy', jewellery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jewellery', new_jewellery_path %>

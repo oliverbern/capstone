@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: 9.99
+  color: MyString
+  clarity: MyString
+  treatment: MyString
+  shape: MyString
+  condgirdle: MyString
+  condculet: MyString
+  sizeculet: MyString
+  conditioncut: MyString
+  length: 9.99
+  width: 9.99
+  weight: 9.99
+  height: 9.99
+  description: MyText
+
+two:
+  weight: 9.99
+  color: MyString
+  clarity: MyString
+  treatment: MyString
+  shape: MyString
+  condgirdle: MyString
+  condculet: MyString
+  sizeculet: MyString
+  conditioncut: MyString
+  length: 9.99
+  width: 9.99
+  weight: 9.99
+  height: 9.99
+  description: MyText

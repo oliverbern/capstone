@@ -1,0 +1,61 @@
+<%= form_for(@jewellery) do |f| %>
+  <% if @jewellery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jewellery.errors.count, "error") %> prohibited this jewellery from being saved:</h2>
+
+      <ul>
+      <% @jewellery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :stone1 %><br>
+    <%= f.text_field :stone1 %>
+  </div>
+  <div class="field">
+    <%= f.label :stone2 %><br>
+    <%= f.text_field :stone2 %>
+  </div>
+  <div class="field">
+    <%= f.label :stone3 %><br>
+    <%= f.text_field :stone3 %>
+  </div>
+  <div class="field">
+    <%= f.label :material1 %><br>
+    <%= f.text_field :material1 %>
+  </div>
+  <div class="field">
+    <%= f.label :material2 %><br>
+    <%= f.text_field :material2 %>
+  </div>
+  <div class="field">
+    <%= f.label :material3 %><br>
+    <%= f.text_field :material3 %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :certificate %><br>
+    <%= f.check_box :certificate %>
+  </div>
+  <div class="field">
+    <%= f.label :companymade %><br>
+    <%= f.text_field :companymade %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br>
+    <%= f.number_field :owner %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :jewelleries
+
+  resources :colordiamonds
+
+  resources :diamonds
+
   devise_for :users
   
   resources :colorgems do

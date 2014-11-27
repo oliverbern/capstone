@@ -1,0 +1,59 @@
+<h1>Listing colordiamonds</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Color</th>
+      <th>Clarity</th>
+      <th>Treatment</th>
+      <th>Shape</th>
+      <th>Condgirdle</th>
+      <th>Condculet</th>
+      <th>Sizeculet</th>
+      <th>Conditioncut</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Description</th>
+      <th>Intensitecolor</th>
+      <th>Bycolor1</th>
+      <th>Bycolor2</th>
+      <th>Diamondcertificate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colordiamonds.each do |colordiamond| %>
+      <tr>
+        <td><%= colordiamond.weight %></td>
+        <td><%= colordiamond.color %></td>
+        <td><%= colordiamond.clarity %></td>
+        <td><%= colordiamond.treatment %></td>
+        <td><%= colordiamond.shape %></td>
+        <td><%= colordiamond.condgirdle %></td>
+        <td><%= colordiamond.condculet %></td>
+        <td><%= colordiamond.sizeculet %></td>
+        <td><%= colordiamond.conditioncut %></td>
+        <td><%= colordiamond.length %></td>
+        <td><%= colordiamond.width %></td>
+        <td><%= colordiamond.weight %></td>
+        <td><%= colordiamond.height %></td>
+        <td><%= colordiamond.description %></td>
+        <td><%= colordiamond.intensitecolor %></td>
+        <td><%= colordiamond.bycolor1 %></td>
+        <td><%= colordiamond.bycolor2 %></td>
+        <td><%= colordiamond.diamondcertificate %></td>
+        <td><%= link_to 'Show', colordiamond %></td>
+        <td><%= link_to 'Edit', edit_colordiamond_path(colordiamond) %></td>
+        <td><%= link_to 'Destroy', colordiamond, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Colordiamond', new_colordiamond_path %>
