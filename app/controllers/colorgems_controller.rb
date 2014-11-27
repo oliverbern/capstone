@@ -86,6 +86,6 @@ class ColorgemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def colorgem_params
-      params.require(:colorgem).permit(:gemstonetype, :color, :shape, :length, :height, :width, :weight, :gemscertificate)
+      params.require(:colorgem).permit(:gemstonetype, :color, :shape, :length, :height, :width, :weight, :gemscertificate, :image)
     end
 end

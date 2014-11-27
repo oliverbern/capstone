@@ -17,6 +17,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
+        <th>Image</th>
         <th>Gemstonetype</th>
         <th>Color</th>
         <th>Shape</th>
@@ -31,6 +32,7 @@
     <tbody>
       <% @colorgems.each do |colorgem| %>
       <tr>
+        <td><%= image_tag colorgem.image.url(:medium) %></td>
         <td><%= link_to colorgem.gemstonetype, colorgem %></td>
         <td><%= colorgem.color %></td>
         <td><%= colorgem.shape %></td>
