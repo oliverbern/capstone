@@ -6,10 +6,11 @@ class ColorgemsController < ApplicationController
   def index
     @search = Colorgem.search(params[:q])
     @colorgems = @search.result.paginate(page: params[:page], per_page: 10)
+    @allcolorgems = Colorgem.all
     respond_to do |format|
       format.html
-      format.csv { send_data @colorgems.to_csv}
-      format.xls { send_data @colorgems.to_csv(col_sep: "\t") }
+      format.csv { send_data @allcolorgems.to_csv}
+      format.xls { send_data @allcolorgems.to_csv(col_sep: "\t") }
     end
   end
 

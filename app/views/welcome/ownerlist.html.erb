@@ -16,8 +16,7 @@
 	</thead>
 
 	<tbody>
-		<% Colorgem.all.each do |colorgem| %>
-		<% if colorgem.owner == current_user.id %>
+		<% @colorgems.each do |colorgem| %>
 		<tr>
 			<td><%= colorgem.gemstonetype %></td>
 			<td><%= colorgem.color %></td>
@@ -32,10 +31,14 @@
 			<td><%= link_to 'Delete', colorgem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 		<% end %>
-		<% end %>
 	</tbody>
 </table>
 
-<br>
+  <p>
+    Download:
+    <%= link_to "CSV", welcome_ownerlist_path(format: "csv") %> |
+    <%= link_to "Excel", welcome_ownerlist_path(format: "xls") %>
+  </p>
+
 
 <%= link_to 'New Colorgem', new_colorgem_path %>
