@@ -37,8 +37,6 @@
   <p>
     Download:
     <%= link_to "CSV", welcome_ownerlist_path(format: "csv") %> |
-    <%= link_to "Excel", welcome_ownerlist_path(format: "xls") %>
+    <%= link_to "Excel", welcome_ownerlist_path(format: "xls") %> |<br>
+    <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
   </p>
-
-
-<%= link_to 'New Colorgem', new_colorgem_path %>
