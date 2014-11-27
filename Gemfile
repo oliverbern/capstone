@@ -17,3 +17,4 @@ gem 'autoprefixer-rails'
 gem 'ransack'
 gem 'will_paginate', '~> 3.0.5'
 gem 'roo'
+gem "paperclip", "~> 3.0"
