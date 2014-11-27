@@ -40,3 +40,163 @@
     <%= link_to "Excel", welcome_ownerlist_path(format: "xls") %> |<br>
     <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
   </p>
+
+  <h1>My Diamonds</h1>
+
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Color</th>
+      <th>Clarity</th>
+      <th>Treatment</th>
+      <th>Shape</th>
+      <th>Condgirdle</th>
+      <th>Condculet</th>
+      <th>Sizeculet</th>
+      <th>Conditioncut</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Diamond.all.each do |diamond| %>
+      <tr>
+        <td><%= diamond.weight %></td>
+        <td><%= diamond.color %></td>
+        <td><%= diamond.clarity %></td>
+        <td><%= diamond.treatment %></td>
+        <td><%= diamond.shape %></td>
+        <td><%= diamond.condgirdle %></td>
+        <td><%= diamond.condculet %></td>
+        <td><%= diamond.sizeculet %></td>
+        <td><%= diamond.conditioncut %></td>
+        <td><%= diamond.length %></td>
+        <td><%= diamond.width %></td>
+        <td><%= diamond.weight %></td>
+        <td><%= diamond.height %></td>
+        <td><%= diamond.description %></td>
+        <td><%= link_to 'Show', diamond %></td>
+        <td><%= link_to 'Edit', edit_diamond_path(diamond) %></td>
+        <td><%= link_to 'Destroy', diamond, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diamond', new_diamond_path %>
+
+
+<h1>My Colored Diamonds</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Color</th>
+      <th>Clarity</th>
+      <th>Treatment</th>
+      <th>Shape</th>
+      <th>Condgirdle</th>
+      <th>Condculet</th>
+      <th>Sizeculet</th>
+      <th>Conditioncut</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Description</th>
+      <th>Intensitecolor</th>
+      <th>Bycolor1</th>
+      <th>Bycolor2</th>
+      <th>Diamondcertificate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Colordiamond.all.each do |colordiamond| %>
+      <tr>
+        <td><%= colordiamond.weight %></td>
+        <td><%= colordiamond.color %></td>
+        <td><%= colordiamond.clarity %></td>
+        <td><%= colordiamond.treatment %></td>
+        <td><%= colordiamond.shape %></td>
+        <td><%= colordiamond.condgirdle %></td>
+        <td><%= colordiamond.condculet %></td>
+        <td><%= colordiamond.sizeculet %></td>
+        <td><%= colordiamond.conditioncut %></td>
+        <td><%= colordiamond.length %></td>
+        <td><%= colordiamond.width %></td>
+        <td><%= colordiamond.weight %></td>
+        <td><%= colordiamond.height %></td>
+        <td><%= colordiamond.description %></td>
+        <td><%= colordiamond.intensitecolor %></td>
+        <td><%= colordiamond.bycolor1 %></td>
+        <td><%= colordiamond.bycolor2 %></td>
+        <td><%= colordiamond.diamondcertificate %></td>
+        <td><%= link_to 'Show', colordiamond %></td>
+        <td><%= link_to 'Edit', edit_colordiamond_path(colordiamond) %></td>
+        <td><%= link_to 'Destroy', colordiamond, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Colordiamond', new_colordiamond_path %>
+
+
+<h1>My Jewellery</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Stone1</th>
+      <th>Stone2</th>
+      <th>Stone3</th>
+      <th>Material1</th>
+      <th>Material2</th>
+      <th>Material3</th>
+      <th>Description</th>
+      <th>Certificate</th>
+      <th>Companymade</th>
+      <th>Owner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Jewellery.all.each do |jewellery| %>
+      <tr>
+        <td><%= jewellery.title %></td>
+        <td><%= jewellery.stone1 %></td>
+        <td><%= jewellery.stone2 %></td>
+        <td><%= jewellery.stone3 %></td>
+        <td><%= jewellery.material1 %></td>
+        <td><%= jewellery.material2 %></td>
+        <td><%= jewellery.material3 %></td>
+        <td><%= jewellery.description %></td>
+        <td><%= jewellery.certificate %></td>
+        <td><%= jewellery.companymade %></td>
+        <td><%= jewellery.owner %></td>
+        <td><%= link_to 'Show', jewellery %></td>
+        <td><%= link_to 'Edit', edit_jewellery_path(jewellery) %></td>
+        <td><%= link_to 'Destroy', jewellery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jewellery', new_jewellery_path %>

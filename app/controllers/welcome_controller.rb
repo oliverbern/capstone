@@ -9,6 +9,12 @@ class WelcomeController < ApplicationController
 		end
 
 
+		@diamonds = Diamond.all
+
+
+
+		@jewelleries = Jewellery.all
+
 		
 	end
 end
