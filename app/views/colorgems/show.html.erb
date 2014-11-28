@@ -40,6 +40,8 @@
   <%= @colorgem.gemscertificate %>
 </p>
 
+<p><%= button_to "Add to Cart", line_items_path(@colorgem) %></p>
+
 <%= link_to 'Edit', edit_colorgem_path(@colorgem) %> |
 <%= link_to 'Back', colorgems_path %>
 
