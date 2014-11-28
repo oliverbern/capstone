@@ -1,4 +1,8 @@
 class Colorgem < ActiveRecord::Base
+	has_many :line_items
+
+	before_destroy :ensure_not_referenced_by_any_line_item
+
 	has_attached_file :image, :styles => { :medium => "50x50", :thumb => "100x100" }, :default_url => "default.png"
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
@@ -47,6 +51,19 @@ class Colorgem < ActiveRecord::Base
 	end
 
 
+
+	private
+
+	#ensure that there are no line items referencing this product
+
+	def ensure_not_referenced_by_any_line_item
+		if line_items.empty?
+			return true
+		else
+			error.add(:base, 'Line Items present')
+			return false
+		end
+	end
 
 
 end

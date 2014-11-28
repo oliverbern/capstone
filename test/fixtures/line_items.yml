@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  colorgem_id: 
+  colordiamonds_id: 
+  diamonds_id: 
+  jewellery_id: 
+  cart_id: 
+
+two:
+  colorgem_id: 
+  colordiamonds_id: 
+  diamonds_id: 
+  jewellery_id: 
+  cart_id: 

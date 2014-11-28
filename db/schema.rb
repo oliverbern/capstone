@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127233118) do
+ActiveRecord::Schema.define(version: 20141127234121) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -91,6 +91,22 @@ ActiveRecord::Schema.define(version: 20141127233118) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "colorgem_id"
+    t.integer  "colordiamonds_id"
+    t.integer  "diamonds_id"
+    t.integer  "jewellery_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["colordiamonds_id"], name: "index_line_items_on_colordiamonds_id"
+  add_index "line_items", ["colorgem_id"], name: "index_line_items_on_colorgem_id"
+  add_index "line_items", ["diamonds_id"], name: "index_line_items_on_diamonds_id"
+  add_index "line_items", ["jewellery_id"], name: "index_line_items_on_jewellery_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
