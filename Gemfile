@@ -18,3 +18,4 @@ gem 'ransack'
 gem 'will_paginate', '~> 3.0.5'
 gem 'roo'
 gem "paperclip", "~> 4.2"
+gem 'activeadmin', github: 'activeadmin'
