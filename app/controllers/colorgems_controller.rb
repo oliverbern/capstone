@@ -42,7 +42,7 @@ class ColorgemsController < ApplicationController
   def create
     @colorgem = Colorgem.new(colorgem_params)
 
-    @colorgem.owner = current_user.id
+    @colorgem.user_id = current_user.id
 
     respond_to do |format|
       if @colorgem.save

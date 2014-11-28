@@ -10,7 +10,9 @@ class Colorgem < ActiveRecord::Base
 
 	belongs_to :user
 
-	validates_presence_of :owner
+	validates_presence_of :user
+
+	
 
 	def self.to_csv(options = {})
 		CSV.generate(options) do |csv|
