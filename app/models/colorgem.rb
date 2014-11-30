@@ -10,7 +10,7 @@ class Colorgem < ActiveRecord::Base
 
 	belongs_to :user
 
-	validates_presence_of :user
+	#validates_presence_of :user
 
 	
 
@@ -38,7 +38,7 @@ class Colorgem < ActiveRecord::Base
 			row = Hash[[header, spreadsheet.row(i)].transpose]
 			colorgem = find_by_id(row["id"]) || new
 			colorgem.attributes = row.to_hash.slice(*Colorgem.attribute_names())
-			#overwrite all colorgems.owner = current_owner
+			#colorgem.user_id = current_user.id
 			colorgem.save!
 		end
 	end
