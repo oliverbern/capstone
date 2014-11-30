@@ -1,5 +1,5 @@
 <h1>My Colored Gemstones</h1>
-
+<% if @colorgems.size > 0 %>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -33,15 +33,18 @@
 		<% end %>
 	</tbody>
 </table>
-
   <p>
     Download:
     <%= link_to "CSV", welcome_ownerlist_path(format: "csv") %> |
     <%= link_to "Excel", welcome_ownerlist_path(format: "xls") %> |<br>
     <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
   </p>
+  <% else %>
+<%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
+<% end %>
 
   <h1>My Diamonds</h1>
+  <% if @diamonds.size > 1 %>
 
   <table class="table table-hover">
   <thead>
@@ -65,7 +68,7 @@
   </thead>
 
   <tbody>
-    <% Diamond.all.each do |diamond| %>
+    <% @diamonds.each do |diamond| %>
       <tr>
         <td><%= diamond.weight %></td>
         <td><%= diamond.color %></td>
@@ -93,8 +96,14 @@
 
 <%= link_to 'New Diamond', new_diamond_path %>
 
+<% else %>
+
+<%= link_to 'New Diamond', new_diamond_path %>
+<% end %>
+
 
 <h1>My Colored Diamonds</h1>
+<% if @colordiamonds.size > 1 %>
 
 <table class="table table-hover">
   <thead>
@@ -122,7 +131,7 @@
   </thead>
 
   <tbody>
-    <% Colordiamond.all.each do |colordiamond| %>
+    <% @colordiamonds.each do |colordiamond| %>
       <tr>
         <td><%= colordiamond.weight %></td>
         <td><%= colordiamond.color %></td>
@@ -154,8 +163,14 @@
 
 <%= link_to 'New Colordiamond', new_colordiamond_path %>
 
+<% else %>
+<%= link_to 'New Colordiamond', new_colordiamond_path %>
+<% end %>
+
 
 <h1>My Jewellery</h1>
+
+<% if @jewelleries.size > 1 %>
 
 <table class="table table-hover">
   <thead>
@@ -176,7 +191,7 @@
   </thead>
 
   <tbody>
-    <% Jewellery.all.each do |jewellery| %>
+    <% @jewelleries.each do |jewellery| %>
       <tr>
         <td><%= jewellery.title %></td>
         <td><%= jewellery.stone1 %></td>
@@ -200,3 +215,8 @@
 <br>
 
 <%= link_to 'New Jewellery', new_jewellery_path %>
+
+<% else %>
+
+<%= link_to 'New Jewellery', new_jewellery_path %>
+<% end %>

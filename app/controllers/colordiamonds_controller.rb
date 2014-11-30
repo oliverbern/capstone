@@ -26,6 +26,9 @@ class ColordiamondsController < ApplicationController
   def create
     @colordiamond = Colordiamond.new(colordiamond_params)
 
+    
+    @colordiamond.user_id = current_user.id
+
     respond_to do |format|
       if @colordiamond.save
         format.html { redirect_to @colordiamond, notice: 'Colordiamond was successfully created.' }

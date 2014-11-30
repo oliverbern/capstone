@@ -1,6 +1,9 @@
 class WelcomeController < ApplicationController
 	def ownerlist
-		@colorgems = Colorgem.all.where(owner: current_user)
+		@colorgems = Colorgem.all.where(user_id: current_user)
+		@diamonds = Diamond.all.where(user_id: current_user)
+		@jewelleries = Jewellery.all.where(owner: current_user)
+		@colordiamonds = Colordiamond.all.where(user_id: current_user)
 
 		respond_to do |format|
 			format.html
@@ -9,11 +12,9 @@ class WelcomeController < ApplicationController
 		end
 
 
-		@diamonds = Diamond.all
+		
 
-
-
-		@jewelleries = Jewellery.all
+	
 
 		
 	end
