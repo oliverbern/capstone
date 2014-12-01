@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
+
+  resources :messages
+  resources :conversations
+
   get 'welcome/home'
 
   get 'welcome/about'
@@ -26,6 +30,8 @@ Rails.application.routes.draw do
   get 'welcome/upgrade'
 
   get 'welcome/ownerlist'
+
+  get 'welcome/mailbox'
 
 
   root 'welcome#home'

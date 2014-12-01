@@ -34,6 +34,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
             <li><%= link_to "My Listings", welcome_ownerlist_path %></li>
+            <li><%= link_to "My Messages", welcome_mailbox_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
             <% else %>
             <li><%= link_to "Sign In", new_user_session_path %></li>

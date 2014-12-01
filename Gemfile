@@ -21,3 +21,13 @@ gem "paperclip", "~> 4.2"
 gem 'activeadmin', github: 'activeadmin'
 gem 'mailboxer'
 
+gem 'haml'
+gem 'haml-rails'
+gem 'simple_form'
+
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end

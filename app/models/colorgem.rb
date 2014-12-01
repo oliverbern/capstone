@@ -36,9 +36,9 @@ class Colorgem < ActiveRecord::Base
 		header = spreadsheet.row(1)
 		(2..spreadsheet.last_row).each do |i|
 			row = Hash[[header, spreadsheet.row(i)].transpose]
-			colorgem = find_by_id(row["id"]) || new
+			colorgem = current_user.colorgems.find_by_id(row["id"]) || new #allows only to access own listings
 			colorgem.attributes = row.to_hash.slice(*Colorgem.attribute_names())
-			#colorgem.user_id = current_user.id
+			colorgem.user_id = current_user.id
 			colorgem.save!
 		end
 	end
