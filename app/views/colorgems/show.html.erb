@@ -1,4 +1,23 @@
 <h1><%= @colorgem.weight %>ct <%= @colorgem.gemstonetype %></h1>
+<br>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag @colorgem.image.url(:large) %>
+  </div>
+  <div class="col-md-3">
+    <p>Sort of Stone: <%= @colorgem.gemstonetype %></p>
+    Color:  <%= @colorgem.color %>
+  </div>
+  <div class="col-md-3">
+    
+   
+
+  </div>
+  
+
+</div>
+
 
 <p>
   <strong>Gemstonetype:</strong>
@@ -7,7 +26,7 @@
 
 <p>
   <strong>Color:</strong>
-  <%= @colorgem.color %>
+  
 </p>
 
 <p>
@@ -47,6 +66,31 @@
 
 <br>
 
+
+Attributes:
+Price
+  Quantity
+    Weight
+
+Description
+  Sort of stone
+  color
+  2nd color
+  birghtness
+  transparancy
+  clarity
+  treatment
+
+cut/shape/condition
+  sort of cut
+  shape
+  surface finishing
+  quality of cut
+  type of cut top side
+  type of cut bottom side
+
+Measurements
+  L, W, Height
 
 
                
