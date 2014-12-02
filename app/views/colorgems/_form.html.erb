@@ -10,28 +10,6 @@
   </ul>
 </div>
 <% end %>
-
-<script>
-$(function() {
-    var availableTags = <%= Colorgem.group(:gemstonetype).map{|item| item.gemstonetype }.to_s.html_safe %>;
-    $( "#gemstonetype" ).autocomplete({
-      source: availableTags
-    });
-  });
-</script>
-<script>
-$(function() {
-    var availableTags = <%= Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe %>;
-    $( "#shape" ).autocomplete({
-      source: availableTags
-    });
-  });
-</script>
-
-
-
-
-
 <div class="field">
   <%= f.label :gemstonetype %><br>
   <%= f.text_field :gemstonetype %>
@@ -65,8 +43,9 @@ $(function() {
   <%= f.check_box :gemscertificate %>
 </div>
 
-<div class="form-group">
-  <%= f.file_field :image, class: "form-control" %>
+<div class="field">
+  <%= f.label :image %><br>
+  <%= f.file_field :image%>
 </div>
 
 <div class="actions">
@@ -74,6 +53,21 @@ $(function() {
 </div>
 <% end %>
 
+<script>
+$(function() {
+    var colorgemTags = <%= @autogemstonetype.html_safe %>;
+    $( "#colorgem_gemstonetype" ).autocomplete({ source: colorgemTags });
+
+    var shapeTags = <%= @autoshape.html_safe %>;
+    $( "#colorgem_shape" ).autocomplete({
+      source: shapeTags
+    });
+
+    var colorTags = <%= @autocolor.html_safe %>;
+    $( "#colorgem_color" ).autocomplete({ source: colorTags });
 
 
-select(:gemstonetype, options_for_select([['Ruby', 'Ruby'], ['Sapphire', 'Sapphire'], ["Opal", "Opal"], ["Citrin"]]))
+
+  });
+</script>
+

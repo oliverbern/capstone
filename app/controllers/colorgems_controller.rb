@@ -2,7 +2,7 @@ class ColorgemsController < ApplicationController
   autocomplete :colorgem, :gemstonetype
   before_action :set_colorgem, only: [:show, :edit, :update, :destroy]
 
-  
+
 
   # GET /colorgems
   # GET /colorgems.json
@@ -34,6 +34,10 @@ class ColorgemsController < ApplicationController
   # GET /colorgems/new
   def new
     @colorgem = Colorgem.new
+    @autogemstonetype = ["Citrin", "Opal"].to_s
+    #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
+    @autoshape = ["Oval"].to_s
+    @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s
   end
 
   # GET /colorgems/1/edit
