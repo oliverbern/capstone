@@ -1,4 +1,5 @@
 class ColorgemsController < ApplicationController
+  autocomplete :colorgem, :gemstonetype
   before_action :set_colorgem, only: [:show, :edit, :update, :destroy]
 
   # GET /colorgems

@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   resources :messages
   resources :conversations
 
+
+  resources :colorgems do
+  get :autocomplete_colorgem_gemstonetype, :on => :collection
+end
+
   get 'welcome/home'
 
   get 'welcome/about'

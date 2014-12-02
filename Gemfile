@@ -19,7 +19,7 @@ gem 'roo'
 gem "paperclip", "~> 4.2"
 gem 'activeadmin', github: 'activeadmin'
 gem 'mailboxer'
-gem 'rails3-jquery-autocomplete'
+gem 'rails3-jquery-autocomplete', git: 'https://github.com/francisd/rails3-jquery-autocomplete'
 
 gem 'haml'
 gem 'haml-rails'

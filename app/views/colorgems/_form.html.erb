@@ -13,8 +13,9 @@
 
 <div class="field">
   <%= f.label :gemstonetype %><br>
-  <%= f.select(:gemstonetype, options_for_select([['Ruby', 'Ruby'], ['Sapphire', 'Sapphire'], ["Opal", "Opal"], ["Citrin"]])) %>
+  <%= f.autocomplete_field :gemstonetype, autocomplete_colorgem_gemstonetype_colorgems_path %>
 </div>
+
 <div class="field">
   <%= f.label :color %><br>
   <%= f.text_field :color %>
@@ -52,3 +53,7 @@
   <%= f.submit %>
 </div>
 <% end %>
+
+
+
+select(:gemstonetype, options_for_select([['Ruby', 'Ruby'], ['Sapphire', 'Sapphire'], ["Opal", "Opal"], ["Citrin"]]))

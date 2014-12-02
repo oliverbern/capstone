@@ -1,8 +1,4 @@
 class Colorgem < ActiveRecord::Base
-	
-
-	
-
 	has_attached_file :image, :styles => { :medium => "50x50", :thumb => "100x100", :large => "300x300" }, :default_url => "default.png"
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
@@ -12,7 +8,7 @@ class Colorgem < ActiveRecord::Base
 
 	#validates_presence_of :user
 
-	
+
 
 	def self.to_csv(options = {})
 		CSV.generate(options) do |csv|
@@ -51,10 +47,8 @@ class Colorgem < ActiveRecord::Base
 		else raise "Unknown file type: #{file.original_filename}"
 		end
 	end
-
-
-
-	
-
-
 end
+
+
+
+
