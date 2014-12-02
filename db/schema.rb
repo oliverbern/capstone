@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130155711) do
+ActiveRecord::Schema.define(version: 20141202232621) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -90,6 +90,16 @@ ActiveRecord::Schema.define(version: 20141130155711) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "colorbrightness"
+    t.string   "transparency"
+    t.string   "clarity"
+    t.string   "treatment"
+    t.string   "gemsunit"
+    t.boolean  "colorgemrequested"
+    t.boolean  "colorgemsold"
+    t.boolean  "showprice"
+    t.decimal  "price"
+    t.string   "secondcolor"
   end
 
   create_table "diamonds", force: true do |t|
