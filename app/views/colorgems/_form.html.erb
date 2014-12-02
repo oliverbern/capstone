@@ -11,11 +11,31 @@
 </div>
 <% end %>
 
+<script>
+$(function() {
+    var availableTags = <%= Colorgem.group(:gemstonetype).map{|item| item.gemstonetype }.to_s.html_safe %>;
+    $( "#gemstonetype" ).autocomplete({
+      source: availableTags
+    });
+  });
+</script>
+<script>
+$(function() {
+    var availableTags = <%= Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe %>;
+    $( "#shape" ).autocomplete({
+      source: availableTags
+    });
+  });
+</script>
+
+
+
+
+
 <div class="field">
   <%= f.label :gemstonetype %><br>
-  <%= f.autocomplete_field :gemstonetype, autocomplete_colorgem_gemstonetype_colorgems_path %>
+  <%= f.text_field :gemstonetype %>
 </div>
-
 <div class="field">
   <%= f.label :color %><br>
   <%= f.text_field :color %>
