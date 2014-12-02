@@ -2,17 +2,21 @@
 
 <%= search_form_for @search do |f| %>
 <div class="field">
-  <%= f.label :gemstonetype_cont, "Stone Type" %><br>
+  <%= f.label :gemstonetype_cont, "Stone Type" %>
   <%= f.text_field :gemstonetype_cont %>
-  <div class="field">
-    <%= f.label :weight_gteq, "Weight between" %>
-    <%= f.text_field :weight_gteq %>
-    <%= f.label :weight_lteq, "and" %>
-    <%= f.text_field :weight_lteq %>
-  </div>
+</div>
+<div class="field">
+  <%= f.label :weight_gteq, "Weight between" %>
+  <%= f.text_field :weight_gteq %>
+  <%= f.label :weight_lteq, "and" %>
+  <%= f.text_field :weight_lteq %>
+</div>
+<div class="field">
+  <%= f.label :color_cont, "Color" %>
+  <%= f.text_field :color_cont %>
 </div>
 <div class="actions"><%= f.submit "Search" %></div>
-  <% end %>
+<% end %>
 
   <table class="table table-hover">
     <thead>
