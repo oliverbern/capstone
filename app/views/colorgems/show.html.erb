@@ -1,99 +1,79 @@
-<h1><%= @colorgem.weight %>ct <%= @colorgem.gemstonetype %></h1>
-<br>
 
-<div class="row">
-  <div class="col-md-6">
-    <%= image_tag @colorgem.image.url(:large) %>
-  </div>
-  <div class="col-md-3">
-    <p>Sort of Stone: <%= @colorgem.gemstonetype %></p>
-    Color:  <%= @colorgem.color %>
-  </div>
-  <div class="col-md-3">
-    
-   
 
-  </div>
-  
-
+<div class="container-fluid">
+  <div class="row text-center">
+  <h1><%= @colorgem.weight %>ct <%= @colorgem.gemstonetype %></h1>
 </div>
-
-
-<p>
-  <strong>Gemstonetype:</strong>
-  <%= @colorgem.gemstonetype %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  
-</p>
-
-<p>
-  <strong>Shape:</strong>
-  <%= @colorgem.shape %>
-</p>
-
-<p>
-  <strong>Length:</strong>
-  <%= @colorgem.length %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @colorgem.height %>
-</p>
-
-<p>
-  <strong>Width:</strong>
-  <%= @colorgem.width %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @colorgem.weight %>
-</p>
-
-<p>
-  <strong>Gemscertificate:</strong>
-  <%= @colorgem.gemscertificate %>
-</p>
-
+<br>
+<div class="row text-center">
+  <div class="col-md-12"><%= image_tag @colorgem.image.url(:medium) %></div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Gemstone Type</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.gemstonetype %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Color</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.color %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Brightness</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.colorbrightness %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Transparency</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.transparency  %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Clarity</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.clarity %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Treatment</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.treatment %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Shape</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.shape %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Length (mm)</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.length %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Width (mm)</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.width %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Height (mm)</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.height %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Price</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.price %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Unit(s)</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.gemsunit %></div>
+</div> 
+<div class="row">
+  <div class="col-md-6 text-right"><strong>Certificate</strong></div>
+  <div class="col-md-6 text-left"><%= @colorgem.gemscertificate %>
+</div>   
+<br>
+<div class="row">
+<div class="col-md-12 text-center">
 <p><%= button_to "Add to Cart", line_items_path(@colorgem) %></p>
-
+</div>
+<div class="col-md-12 text-center">
 <%= link_to 'Edit', edit_colorgem_path(@colorgem) %> |
 <%= link_to 'Back', colorgems_path %>
-
+</div>
+</div> 
 <br>
 
-
-Attributes:
-Price
-  Quantity
-    Weight
-
-Description
-  Sort of stone
-  color
-  2nd color
-  birghtness
-  transparancy
-  clarity
-  treatment
-
-cut/shape/condition
-  sort of cut
-  shape
-  surface finishing
-  quality of cut
-  type of cut top side
-  type of cut bottom side
-
-Measurements
-  L, W, Height
-
-
-               
+</div>          
 
 
 
