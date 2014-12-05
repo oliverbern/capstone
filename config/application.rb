@@ -27,5 +27,3 @@ module Flipgemstones
     # config.i18n.default_locale = :de
   end
 end
-
-<img src="assets/image.png"
