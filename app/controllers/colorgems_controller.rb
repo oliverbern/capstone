@@ -18,7 +18,7 @@ class ColorgemsController < ApplicationController
   end
 
   def import
-    Colorgem.import(params[:file])
+    Colorgem.import(params[:file], current_user)
     redirect_to colorgems_path, notice: "Products imported."
   end
 

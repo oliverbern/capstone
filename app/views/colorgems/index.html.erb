@@ -5,12 +5,32 @@
   <%= f.label :gemstonetype_cont, "Stone Type" %>
   <%= f.text_field :gemstonetype_cont %>
 </div>
-<div class="field">
+<div class="field1" style="display:none">
   <%= f.label :weight_gteq, "Weight between" %>
-  <%= f.text_field :weight_gteq %>
+  <%= f.text_field :weight_gteq, value: (params[:q][:weight_gteq] || Colorgem.minimum(:weight).to_f)  %>
   <%= f.label :weight_lteq, "and" %>
-  <%= f.text_field :weight_lteq %>
+  <%= f.text_field :weight_lteq, value: (params[:q][:weight_lteq] || Colorgem.maximum(:weight).to_f) %>
 </div>
+<div class="weightslider">
+
+  </div>
+  <script>
+  $(document).ready(function(){
+       $( ".weightslider" ).slider({
+      range: true,
+      min: <%= Colorgem.minimum(:weight).to_f %>,
+      max: <%= Colorgem.maximum(:weight).to_f %>,
+      values: [ <%= params[:q][:weight_gteq] || Colorgem.minimum(:weight).to_f %>, <%= params[:q][:weight_lteq] || Colorgem.maximum(:weight).to_f %> ],
+      slide: function( event, ui ) {
+        $( "#q_weight_gteq" ).val( ui.values[ 0 ] );
+        $( "#q_weight_lteq" ).val( ui.values[ 1 ] );
+      }
+    });
+   });
+  </script>
+<div class="field">
+<%= f.label :length, "Length"%>
+  </div>
 <div class="field">
   <%= f.label :color_cont, "Color" %>
   <%= f.text_field :color_cont %>
@@ -24,12 +44,19 @@
         <th>Image</th>
         <th>Gemstonetype</th>
         <th>Color</th>
+        <th>secondcolor</th>
         <th>Shape</th>
         <th>Length</th>
         <th>Height</th>
         <th>Width</th>
         <th>Weight</th>
         <th>Gemscertificate</th>
+        <th>colorbrightness</th>
+        <th>transparency</th>
+        <th>clarity</th>
+        <th>treatment</th>
+        <th>gemsunit</th>
+        <th>price</th>
       </tr>
     </thead>
 
@@ -39,12 +66,19 @@
         <td><%= image_tag colorgem.image.url(:medium) %></td>
         <td><%= link_to colorgem.gemstonetype, colorgem %></td>
         <td><%= colorgem.color %></td>
+        <td><%= colorgem.secondcolor %></td>
         <td><%= colorgem.shape %></td>
         <td><%= colorgem.length %></td>
         <td><%= colorgem.height %></td>
         <td><%= colorgem.width %></td>
         <td><%= colorgem.weight %></td>
         <td><%= colorgem.gemscertificate %></td>
+        <td><%= colorgem.colorbrightness %></td>
+        <td><%= colorgem.transparency %></td>
+        <td><%= colorgem.clarity %></td>
+        <td><%= colorgem.treatment %></td>
+        <td><%= colorgem.gemsunit %></td>
+        <td><%= colorgem.price %></td>
       </tr>
       <% end %>
     </tbody>
@@ -68,3 +102,5 @@
 
 
   <%= link_to 'New Colorgem', new_colorgem_path %>
+
+

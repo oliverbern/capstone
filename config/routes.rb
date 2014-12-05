@@ -38,6 +38,8 @@ end
 
   get 'welcome/mailbox'
 
+  get 'welcome/testpage'
+
 
   root 'welcome#home'
 

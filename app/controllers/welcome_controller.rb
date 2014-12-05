@@ -23,4 +23,10 @@ class WelcomeController < ApplicationController
 
 	end
 
+	def homepageinfo
+		@colorgems = Colorgem.all
+
+	end
+
+
 end

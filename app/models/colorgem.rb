@@ -1,10 +1,12 @@
 class Colorgem < ActiveRecord::Base
+
 	has_attached_file :image, :styles => { :medium => "50x50", :thumb => "100x100", :large => "300x300" }, :default_url => "default.png"
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 
 
 	belongs_to :user
+
 
 	#validates_presence_of :user
 
@@ -19,7 +21,7 @@ class Colorgem < ActiveRecord::Base
 		end
 	end
 
-	def self.import(file)
+	def self.import(file, current_user)
 		#CSV.foreach(file.path, headers: true) do |row|
 			#colorgem = find_by_id(row["id"]) || new
 			#colorgem.attributes = row.to_hash.slice(*accessible_attributes)
@@ -47,6 +49,8 @@ class Colorgem < ActiveRecord::Base
 		else raise "Unknown file type: #{file.original_filename}"
 		end
 	end
+
+
 end
 
 
