@@ -7,7 +7,7 @@
 </div>
 <div class="field1" style="display:none">
   <%= f.label :weight_gteq, "Weight between" %>
-  <%= f.text_field :weight_gteq, value: (params[:q][:weight_gteq] || Colorgem.minimum(:weight).to_f)  %>
+  <%= f.text_field :weight_gteq, value: (params[:q][:weight_gteq] || Colorgem.minimum(:weight).to_f) %>
   <%= f.label :weight_lteq, "and" %>
   <%= f.text_field :weight_lteq, value: (params[:q][:weight_lteq] || Colorgem.maximum(:weight).to_f) %>
 </div>
