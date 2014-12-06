@@ -134,22 +134,13 @@
   <table class="table table-hover table-condensed table-bordered">
     <thead>
       <tr>
-        <th class="hidden-sm">Image</th></div>
-        <th>Gemstonetype</th>
+        <th>Image</th></div>
+        <th>Category</th>
         <th>Color</th>
-        <th>secondcolor</th>
         <th>Shape</th>
         <th>Length</th>
-        <th>Height</th>
         <th>Width</th>
         <th>Weight</th>
-        <th>Gemscertificate</th>
-        <th>colorbrightness</th>
-        <th>transparency</th>
-        <th>clarity</th>
-        <th>treatment</th>
-        <th>gemsunit</th>
-        <th>price</th>
       </tr>
     </thead>
 
@@ -159,19 +150,10 @@
         <td><%= image_tag colorgem.image.url(:medium) %></td>
         <td><%= link_to colorgem.gemstonetype, colorgem %></td>
         <td><%= colorgem.color %></td>
-        <td><%= colorgem.secondcolor %></td>
         <td><%= colorgem.shape %></td>
         <td><%= colorgem.length %></td>
-        <td><%= colorgem.height %></td>
         <td><%= colorgem.width %></td>
         <td><%= colorgem.weight %></td>
-        <td><%= colorgem.gemscertificate %></td>
-        <td><%= colorgem.colorbrightness %></td>
-        <td><%= colorgem.transparency %></td>
-        <td><%= colorgem.clarity %></td>
-        <td><%= colorgem.treatment %></td>
-        <td><%= colorgem.gemsunit %></td>
-        <td><%= colorgem.price %></td>
       </tr>
       <% end %>
     </tbody>
