@@ -1,43 +1,136 @@
-<h1>Listing colorgems</h1>
 
+<h2>Currently: 39484 Gemstones available</h2>
 <%= search_form_for @search do |f| %>
-<div class="field">
-  <%= f.label :gemstonetype_cont, "Stone Type" %>
-  <%= f.text_field :gemstonetype_cont %>
-</div>
-<div class="field1" style="display:none">
-  <%= f.label :weight_gteq, "Weight between" %>
-  <%= f.text_field :weight_gteq, value: (params[:q][:weight_gteq] || Colorgem.minimum(:weight).to_f) %>
-  <%= f.label :weight_lteq, "and" %>
-  <%= f.text_field :weight_lteq, value: (params[:q][:weight_lteq] || Colorgem.maximum(:weight).to_f) %>
-</div>
-<div class="weightslider">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Basic Search
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+       <div class="row">
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :gemstonetype_cont, "Stone Type" %>
+            <%= f.text_field :gemstonetype_cont %>
+          </div></p>
+          <p><div class="field">
+            <%= f.label :weight_gteq, "Weight " %>
+            <%= f.text_field :weight_gteq %> 
+            <%= f.label :weight_lteq, "-" %>
+            <%= f.text_field :weight_lteq %> 
+          </div></p>
+        </div>
+        <div class="col-md-4 ">
+          <p><div class="field">
+            <%= f.label :length_gteq, "Length " %>
+            <%= f.text_field :length_gteq %> 
+            <%= f.label :length_lteq, "-" %>
+            <%= f.text_field :length_lteq %> 
+          </div></p>
+          <p><div class="field">
+            <%= f.label :width_gteq, "Width " %>
+            <%= f.text_field :width_gteq %> 
+            <%= f.label :width_lteq, "-" %>
+            <%= f.text_field :width_lteq %> 
+          </div></p>
+        </div>
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :color_cont, "Color" %>
+            <%= f.text_field :color_cont %>
+          </div></p>
+        </div>
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :shape_cont, "Shape" %>
+            <%= f.text_field :shape_cont %>
+          </div></p>
+        </div>
+        <br>
+        
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Extendend Search
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+<div class="row">
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :secondcolor_cont, "2nd Color" %>
+            <%= f.text_field :secondcolor_cont %>
+          </div></p>
+          <p><div class="field">
+            <%= f.label :height_gteq, "Height " %>
+            <%= f.text_field :height_gteq %> 
+            <%= f.label :height_lteq, "-" %>
+            <%= f.text_field :height_lteq %> 
+          </div></p>
+        </div>
+        <div class="col-md-4 ">
+          <p><div class="field">
+            <%= f.label :colorbrightness_cont, "Brightness" %>
+            <%= f.text_field :colorbrightness_cont %>
+          </div></p>
+          <p><div class="field">
+            <%= f.label :transparency_cont, "Transparency" %>
+            <%= f.text_field :transparency_cont %>
+          </div></p>
+        </div>
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :clarity_cont, "Clarity" %>
+            <%= f.text_field :clarity_cont %>
+          </div></p>
+        </div>
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :treatment_cont, "Treatment" %>
+            <%= f.text_field :treatment_cont %>
+          </div></p>
+        </div>
+         <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :gemsunit_cont, "No. of Stones" %>
+            <%= f.text_field :gemsunit_cont %>
+          </div></p>
+        </div>
+         <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :gemscertificate_cont, "Certificate" %>
+            <%= f.check_box :gemscertificate_cont %>
+          </div></p>
+        </div>
+        <br>
+
+
+        </div>
+      </div>        </div>
+      </div>
+    </div>
+
+   
 
   </div>
-  <script>
-  $(document).ready(function(){
-       $( ".weightslider" ).slider({
-      range: true,
-      min: <%= Colorgem.minimum(:weight).to_f %>,
-      max: <%= Colorgem.maximum(:weight).to_f %>,
-      values: [ <%= params[:q][:weight_gteq] || Colorgem.minimum(:weight).to_f %>, <%= params[:q][:weight_lteq] || Colorgem.maximum(:weight).to_f %> ],
-      slide: function( event, ui ) {
-        $( "#q_weight_gteq" ).val( ui.values[ 0 ] );
-        $( "#q_weight_lteq" ).val( ui.values[ 1 ] );
-      }
-    });
-   });
-  </script>
-<div class="field">
-<%= f.label :length, "Length"%>
-  </div>
-<div class="field">
-  <%= f.label :color_cont, "Color" %>
-  <%= f.text_field :color_cont %>
-</div>
-<div class="actions"><%= f.submit "Search" %></div>
-<% end %>
-
+    <div class="col-md-12">
+          <p>
+            <button type="button" class="btn btn-primary btn-xs"><%= f.submit "Search" %></button>
+          </p>
+          </div>
+ <% end %>
+</br>
   <table class="table table-hover">
     <thead>
       <tr>
