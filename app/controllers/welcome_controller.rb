@@ -8,9 +8,12 @@ class WelcomeController < ApplicationController
 		current_user.colordiamonds #same as above - need to change user model to has_many ...
 
 		respond_to do |format|
-			format.html
+      format.html
+      format.csv { send_data @allcolorgems.to_csv}
+      format.xls { send_data @allcolorgems.to_csv(col_sep: "\t") }
+    	end
 			
-		end
+		
 
 	end
 
