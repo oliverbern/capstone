@@ -43,6 +43,8 @@
           <% end %>
         </tbody>
       </table>
+
+      <%= will_paginate @colorgemspag %>
       <p>
         Download:
         <%= link_to "CSV", welcome_ownerlist_path(format: "csv") %> |

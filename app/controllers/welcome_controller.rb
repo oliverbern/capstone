@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
 		@diamonds = Diamond.all.where(user_id: current_user)
 		@jewelleries = Jewellery.all.where(owner: current_user)
 		@colordiamonds = Colordiamond.all.where(user_id: current_user)
+		@colorgemspag = Colorgem.all.where(user_id: current_user).paginate(page: params[:page], per_page: 10)
 		current_user.colordiamonds #same as above - need to change user model to has_many ...
 
 		respond_to do |format|
@@ -27,6 +28,11 @@ class WelcomeController < ApplicationController
 		@colorgems = Colorgem.all
 
 	end
+
+
+
+	
+
 
 
 end
