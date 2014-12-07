@@ -44,6 +44,11 @@ class ColorgemsController < ApplicationController
 
   # GET /colorgems/1/edit
   def edit
+        @autogemstonetype = ["Citrin", "Opal"].to_s
+    #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
+    @autoshape = ["Oval"].to_s
+    @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s
+    @autoclarity = []
   end
 
   # POST /colorgems
@@ -76,6 +81,12 @@ class ColorgemsController < ApplicationController
         format.json { render json: @colorgem.errors, status: :unprocessable_entity }
       end
     end
+
+    @autogemstonetype = ["Citrin", "Opal"].to_s
+    #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
+    @autoshape = ["Oval"].to_s
+    @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s
+    @autoclarity = []
   end
 
   # DELETE /colorgems/1
