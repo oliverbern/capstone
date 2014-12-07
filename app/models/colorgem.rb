@@ -22,14 +22,6 @@ class Colorgem < ActiveRecord::Base
 	end
 
 	def self.import(file, current_user)
-		#CSV.foreach(file.path, headers: true) do |row|
-			#colorgem = find_by_id(row["id"]) || new
-			#colorgem.attributes = row.to_hash.slice(*accessible_attributes)
-			#colorgem.save!
-			#Colorgem.create! row.to_hash
-		#end
-
-
 		spreadsheet = open_spreadsheet(file)
 		header = spreadsheet.row(1)
 		(2..spreadsheet.last_row).each do |i|
