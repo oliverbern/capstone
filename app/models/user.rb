@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :jewelleries
 
 
-  enum role: [:checkuser, :standarduser, :silveruser, :golduser, :admin]
+  enum role: [:checkuser, :standarduser, :silveruser, :golduser, :admin, :privateuser]
 
 
   def mailboxer_email(object)

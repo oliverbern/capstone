@@ -89,6 +89,8 @@ GEM
     erubis (2.7.0)
     excon (0.39.6)
     execjs (2.2.2)
+    figaro (1.0.0)
+      thor (~> 0.14)
     fog (1.23.0)
       fog-brightbox
       fog-core (~> 1.23)
@@ -254,8 +256,10 @@ DEPENDENCIES
   activeadmin!
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
+  figaro
   fog
   haml
   haml-rails

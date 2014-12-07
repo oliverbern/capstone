@@ -147,7 +147,7 @@
     <tbody>
       <% @colorgems.each do |colorgem| %>
       <tr>
-        <td><%= image_tag colorgem.image.url(:medium) %></td>
+        <td><%= image_tag colorgem.image.url %></td>
         <td><%= link_to colorgem.gemstonetype, colorgem %></td>
         <td><%= colorgem.color %></td>
         <td><%= colorgem.shape %></td>
