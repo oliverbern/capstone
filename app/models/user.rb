@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+
+  # Added by Koudoku.
+  has_one :subscription
+
+
 	acts_as_messageable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
