@@ -26,6 +26,8 @@ class DiamondsController < ApplicationController
   def create
     @diamond = Diamond.new(diamond_params)
 
+    @diamond.user_id = current_user.id
+
     respond_to do |format|
       if @diamond.save
         format.html { redirect_to @diamond, notice: 'Diamond was successfully created.' }

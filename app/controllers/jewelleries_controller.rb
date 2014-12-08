@@ -26,6 +26,8 @@ class JewelleriesController < ApplicationController
   def create
     @jewellery = Jewellery.new(jewellery_params)
 
+    @jewellery.user_id = current_user.id
+
     respond_to do |format|
       if @jewellery.save
         format.html { redirect_to @jewellery, notice: 'Jewellery was successfully created.' }

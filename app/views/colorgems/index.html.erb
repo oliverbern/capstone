@@ -1,7 +1,7 @@
 
 <h2>Currently: 39484 Gemstones available</h2>
 
-<%= search_form_for @search do |f| %>
+<%= search_form_for @search, url: search_colorgems_path, method: :post do |f| %>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -131,52 +131,52 @@
 <% end %>
 <br>
 
-  <table class="table table-hover table-condensed table-bordered">
-    <thead>
-      <tr>
-        <th>Image</th></div>
-        <th>Category</th>
-        <th>Color</th>
-        <th>Shape</th>
-        <th>Length</th>
-        <th>Width</th>
-        <th>Weight</th>
-      </tr>
-    </thead>
+<table class="table table-hover table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Image</th></div>
+      <th>Category</th>
+      <th>Color</th>
+      <th>Shape</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Weight</th>
+    </tr>
+  </thead>
 
-    <tbody>
-      <% @colorgems.each do |colorgem| %>
-      <tr>
-        <td><%= image_tag colorgem.image.url %></td>
-        <td><%= link_to colorgem.gemstonetype, colorgem %></td>
-        <td><%= colorgem.color %></td>
-        <td><%= colorgem.shape %></td>
-        <td><%= colorgem.length %></td>
-        <td><%= colorgem.width %></td>
-        <td><%= colorgem.weight %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
-
-  <%= will_paginate @colorgems %>
-  <br>
-  <p>
-    Download:
-    <%= link_to "CSV", colorgems_path(format: "csv") %> |
-    <%= link_to "Excel", colorgems_path(format: "xls") %>
-  </p>
-
-  <h2>Import Colored Gems</h2>
-
-  <%= form_tag import_colorgems_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-  <% end %>
+  <tbody>
+    <% @colorgems.each do |colorgem| %>
+    <tr>
+      <td><%= image_tag colorgem.image.url %></td>
+      <td><%= link_to colorgem.gemstonetype, colorgem %></td>
+      <td><%= colorgem.color %></td>
+      <td><%= colorgem.shape %></td>
+      <td><%= colorgem.length %></td>
+      <td><%= colorgem.width %></td>
+      <td><%= colorgem.weight %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 
-  <%= link_to 'New Colorgem', new_colorgem_path %>
+
+<%= will_paginate @colorgems %>
+<br>
+<p>
+  Download:
+  <%= link_to "CSV", colorgems_path(format: "csv") %> |
+  <%= link_to "Excel", colorgems_path(format: "xls") %>
+</p>
+
+<h2>Import Colored Gems</h2>
+
+<%= form_tag import_colorgems_path, multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "Import" %>
+<% end %>
+
+
+<%= link_to 'New Colorgem', new_colorgem_path %>
 
 

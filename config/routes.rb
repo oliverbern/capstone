@@ -11,13 +11,14 @@ Rails.application.routes.draw do
 
   resources :diamonds
 
-  devise_for :users
+    devise_for :users
   
   resources :colorgems do
     collection { post :import }
+    collection { post :search, to: "colorgems#index" }
   end
 
-  resources :messages
+   resources :messages
   resources :conversations
 
 
@@ -34,6 +35,8 @@ end
   get 'welcome/upgrade'
 
   get 'welcome/ownerlist'
+
+  post 'welcome/import'
 
   get 'welcome/mailbox'
 

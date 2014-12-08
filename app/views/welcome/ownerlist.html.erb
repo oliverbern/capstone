@@ -26,7 +26,7 @@
         </thead>
 
         <tbody>
-          <% @colorgems.each do |colorgem| %>
+          <% @colorgemspag.each do |colorgem| %>
           <tr>
             <td><%= colorgem.gemstonetype %></td>
             <td><%= colorgem.color %></td>
@@ -47,10 +47,16 @@
       <%= will_paginate @colorgemspag %>
       <p>
         Download:
-        <%= link_to "CSV", welcome_ownerlist_path(format: "csv") %> |
-        <%= link_to "Excel", welcome_ownerlist_path(format: "xls") %> |<br>
+        <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'colorgems') %> |
+        <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'colorgems') %> |<br>
         <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
       </p>
+      <h2>Import Colored Gems</h2>
+        <%= form_tag welcome_import_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= hidden_field_tag(:source, "colorgems") %>
+        <%= submit_tag "Import" %>
+      <% end %>
       <% else %>
       <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
       <% end %>
@@ -67,7 +73,7 @@
   </div>
   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
     <div class="panel-body">
-      <% if @diamonds.size > 1 %>
+      <% if @diamonds.size > 0 %>
 
       <table class="table table-hover">
         <thead>
@@ -116,7 +122,12 @@
       </table>
 
       <br>
-
+<p>
+        Download:
+        <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'diamonds') %> |
+        <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'diamonds') %> |<br>
+        <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
+      </p>
       <%= link_to 'New Diamond', new_diamond_path %>
 
       <% else %>
@@ -136,7 +147,7 @@
   </div>
   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
     <div class="panel-body">
-      <% if @colordiamonds.size > 1 %>
+      <% if @colordiamonds.size > 0 %>
 
       <table class="table table-hover">
         <thead>
@@ -193,6 +204,12 @@
       </table>
 
       <br>
+      <p>
+        Download:
+        <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'colordiamonds') %> |
+        <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'colordiamonds') %> |<br>
+        <%= link_to 'Create New Colored Gemstones Listing', new_colordiamond_path %>
+      </p>
 
       <%= link_to 'New Colordiamond', new_colordiamond_path %>
 
@@ -212,7 +229,7 @@
   </div>
   <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
     <div class="panel-body">
-      <% if @jewelleries.size > 1 %>
+      <% if @jewelleries.size > 0 %>
 
       <table class="table table-hover">
         <thead>
@@ -255,7 +272,18 @@
       </table>
 
       <br>
-
+      <p>
+        Download:
+        <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'jewelleries') %> |
+        <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'jewelleries') %> |<br>
+        <%= link_to 'Create New Colored Gemstones Listing', new_jewellery_path %>
+      </p>
+<h2>Import Jewellery Items</h2>
+        <%= form_tag welcome_import_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= hidden_field_tag(:source, "jewelleries") %>
+        <%= submit_tag "Import" %>
+      <% end %>
       <%= link_to 'New Jewellery', new_jewellery_path %>
 
       <% else %>
