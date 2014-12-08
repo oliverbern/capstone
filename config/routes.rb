@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
-
   resources :messages
   resources :conversations
 
@@ -39,6 +38,8 @@ end
   get 'welcome/mailbox'
 
   get 'welcome/testpage'
+
+  get 'koudoku/index'
 
 
   root 'welcome#home'
