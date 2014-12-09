@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207234250) do
+ActiveRecord::Schema.define(version: 20141209154857) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20141207234250) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "listingstatus"
+    t.boolean  "killstatus"
   end
 
   create_table "colorgems", force: true do |t|
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 20141207234250) do
     t.decimal  "price"
     t.string   "secondcolor"
     t.string   "image"
+    t.string   "listingstatus",      default: "0"
+    t.boolean  "killstatus"
   end
 
   create_table "coupons", force: true do |t|
@@ -127,6 +131,8 @@ ActiveRecord::Schema.define(version: 20141207234250) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "listingstatus"
+    t.boolean  "killstatus"
   end
 
   create_table "jewelleries", force: true do |t|
@@ -144,6 +150,8 @@ ActiveRecord::Schema.define(version: 20141207234250) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "listingstatus"
+    t.boolean  "killstatus"
   end
 
   create_table "line_items", force: true do |t|

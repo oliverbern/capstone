@@ -21,7 +21,7 @@
             <th>Width</th>
             <th>Weight</th>
             <th>Gemscertificate</th>
-            <th colspan="3"></th>
+            <th colspan="5"></th>
           </tr>
         </thead>
 
@@ -39,10 +39,21 @@
             <td><%= link_to 'Show', colorgem %></td>
             <td><%= link_to 'Edit', edit_colorgem_path(colorgem) %></td>
             <td><%= link_to 'Delete', colorgem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= colorgem.listingstatus %></td>
+            <td>
+               <%= form_for colorgem do |t| %>
+     <%= t.hidden_field :listingstatus, :value => "disabled"%>
+     <%= t.submit "change_name_to_disabled" %>
+   <% end %>
+
+
+
+            </td>
           </tr>
           <% end %>
         </tbody>
       </table>
+
 
       <%= will_paginate @colorgemspag %>
       <p>
