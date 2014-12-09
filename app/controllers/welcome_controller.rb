@@ -5,6 +5,10 @@ class WelcomeController < ApplicationController
 		@jewelleries = Jewellery.where(user_id: current_user.id)
 		@colordiamonds = Colordiamond.where(user_id: current_user.id)
 		@colorgemspag = @colorgems.paginate(page: params[:page], per_page: 10)
+		@diamondspag = @diamonds.paginate(page: params[:page], per_page: 10)
+		@jewelleriespag = @jewelleries.paginate(page: params[:page], per_page: 10)
+		@colordiamondspag = @colordiamonds.paginate(page: params[:page], per_page: 10)
+
 		
 		case params[:source]
 		when 'colorgems' 
@@ -31,7 +35,6 @@ class WelcomeController < ApplicationController
 	end
 
 	def import
-
 		case params[:source]
 		when 'colorgems' 
 			input = Colorgem
@@ -48,27 +51,4 @@ class WelcomeController < ApplicationController
 		input.import(params[:file], current_user)
 		redirect_to  welcome_ownerlist_path, notice: "Products imported."
 	end
-	
-
-	def export_jewellery
-		@jewelleries = Jewellery.all.where(owner: current_user)
-
-		respond_to do |format|
-			format.csv { send_data @colorgems.to_csv}
-			format.xls { send_data @colorgems.to_csv(col_sep: "\t") }
-		end
-
-	end
-
-	def homepageinfo
-		@colorgems = Colorgem.all
-
-	end
-
-
-
-	
-
-
-
 end

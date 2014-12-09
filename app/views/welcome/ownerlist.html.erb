@@ -97,7 +97,7 @@
         </thead>
 
         <tbody>
-          <% @diamonds.each do |diamond| %>
+          <% @diamondspag.each do |diamond| %>
           <tr>
             <td><%= diamond.weight %></td>
             <td><%= diamond.color %></td>
@@ -121,14 +121,20 @@
         </tbody>
       </table>
 
+       <%= will_paginate @diamondspag %>
       <br>
 <p>
         Download:
         <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'diamonds') %> |
         <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'diamonds') %> |<br>
-        <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
+        <%= link_to 'Create New Diamond Listing', new_diamond_path %>
       </p>
-      <%= link_to 'New Diamond', new_diamond_path %>
+      <h2>Import Diamonds</h2>
+        <%= form_tag welcome_import_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= hidden_field_tag(:source, "diamonds") %>
+        <%= submit_tag "Import" %>
+        <% end %>
 
       <% else %>
 
@@ -175,7 +181,7 @@
         </thead>
 
         <tbody>
-          <% @colordiamonds.each do |colordiamond| %>
+          <% @colordiamondspag.each do |colordiamond| %>
           <tr>
             <td><%= colordiamond.weight %></td>
             <td><%= colordiamond.color %></td>
@@ -203,6 +209,7 @@
         </tbody>
       </table>
 
+       <%= will_paginate @colordiamondspag %>
       <br>
       <p>
         Download:
@@ -210,7 +217,12 @@
         <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'colordiamonds') %> |<br>
         <%= link_to 'Create New Colored Gemstones Listing', new_colordiamond_path %>
       </p>
-
+      <h2>Import Colored Diamonds</h2>
+        <%= form_tag welcome_import_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= hidden_field_tag(:source, "colordiamonds") %>
+        <%= submit_tag "Import" %>
+      <% end %>
       <%= link_to 'New Colordiamond', new_colordiamond_path %>
 
       <% else %>

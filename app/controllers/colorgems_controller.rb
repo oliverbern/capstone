@@ -47,7 +47,7 @@ class ColorgemsController < ApplicationController
 
   # GET /colorgems/1/edit
   def edit
-        @autogemstonetype = ["Citrin", "Opal"].to_s
+    @autogemstonetype = ["Citrin", "Opal"].to_s
     #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
     @autoshape = ["Oval"].to_s
     @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s

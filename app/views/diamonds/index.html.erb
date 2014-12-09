@@ -1,4 +1,122 @@
-<h1>Listing diamonds</h1>
+
+<h2>Currently: 39484 Diamonds available</h2>
+
+<%= search_form_for @search, url: search_diamonds_path, method: :post do |f| %>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Basic Search
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in " role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+       <div class="row">
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :color_cont, "Color" %>
+            <%= f.text_field :color_cont %>
+          </div></p>
+          <p><div class="field">
+            <%= f.label :weight_gteq, "Weight " %>
+            <%= f.text_field :weight_gteq %> 
+            <%= f.label :weight_lteq, "-" %>
+            <%= f.text_field :weight_lteq %> 
+          </div></p>
+        </div>
+        <div class="col-md-4 ">
+          <p><div class="field">
+            <%= f.label :length_gteq, "Length " %>
+            <%= f.text_field :length_gteq %> 
+            <%= f.label :length_lteq, "-" %>
+            <%= f.text_field :length_lteq %> 
+          </div></p>
+          <p><div class="field">
+            <%= f.label :width_gteq, "Width " %>
+            <%= f.text_field :width_gteq %> 
+            <%= f.label :width_lteq, "-" %>
+            <%= f.text_field :width_lteq %> 
+          </div></p>
+        </div>
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :clarity_cont, "Clarity" %>
+            <%= f.text_field :clarity_cont %>
+          </div></p>
+        </div>
+        <div class="col-md-4">
+          <p><div class="field">
+            <%= f.label :shape_cont, "Shape" %>
+            <%= f.text_field :shape_cont %>
+          </div></p>
+        </div>
+        <br>  
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default hidden-xs">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Extendend Search
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+            <p><div class="field">
+              <%= f.label :treatment_cont, "Treatment" %>
+              <%= f.text_field :treatment_cont %>
+            </div></p>
+            <p><div class="field">
+              <%= f.label :height_gteq, "Height " %>
+              <%= f.text_field :height_gteq %> 
+              <%= f.label :height_lteq, "-" %>
+              <%= f.text_field :height_lteq %> 
+            </div></p>
+          </div>
+          <div class="col-md-4 ">
+            <p><div class="field">
+              <%= f.label :condgirdle_cont, "Girdle Condition" %>
+              <%= f.text_field :condgirdle_cont %>
+            </div></p>
+            <p><div class="field">
+              <%= f.label :condculet_cont, "Culet Condition" %>
+              <%= f.text_field :condculet_cont %>
+            </div></p>
+          </div>
+          <div class="col-md-4">
+            <p><div class="field">
+              <%= f.label :sizeculet_cont, "Culet Size" %>
+              <%= f.text_field :sizeculet_cont %>
+            </div></p>
+          </div>
+          <div class="col-md-4">
+            <p><div class="field">
+              <%= f.label :conditioncut_cont, "Cut Condition" %>
+              <%= f.text_field :conditioncut_cont %>
+            </div></p>
+          </div>
+          <br>
+
+
+        </div>
+      </div>        </div>
+    </div>
+  </div>
+
+</div>
+<div class="col-md-12">
+  <p>
+    <button type="button" class="btn btn-primary btn-xs"><%= f.submit "Search" %></button>
+  </p>
+</div>
+<% end %>
 
 <table class="table table-hover">
   <thead>
@@ -45,7 +163,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @diamonds %>
 <br>
 
 <%= link_to 'New Diamond', new_diamond_path %>
