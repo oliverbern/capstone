@@ -62,16 +62,20 @@
 <br>
 <div class="row">
 <div class="col-md-12 text-center">
-<p><%= button_to "Add to Cart", line_items_path(@colorgem) %></p>
+<p><%= button_to "Add request", add_request_conversations_path(colorgem_id: @colorgem) %></p>
 </div>
 <div class="col-md-12 text-center">
-<%= link_to 'Edit', edit_colorgem_path(@colorgem) %> |
+<%= link_to 'Edit', edit_colorgem_path(id: @colorgem) %> |
 <%= link_to 'Back', colorgems_path %>
 </div>
 </div> 
 <br>
 
-</div>          
+</div>    
+
+<h2>Request Stone</h2>
+
+  
 
 
 

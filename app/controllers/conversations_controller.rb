@@ -27,6 +27,17 @@ class ConversationsController < ApplicationController
     redirect_to :conversations
   end
 
+  def add_request
+    stone = Colorgem.find(params[:colorgem_id])
+    count2 = Colorgem.all.size
+
+    logger.debug stone.user_id
+
+    current_user.send_message(stone.user, "Stone Requested", "Stone #{count2}")
+
+    redirect_to stone
+  end
+
   private
 
   def mailbox

@@ -10,6 +10,8 @@ class ColorgemsController < ApplicationController
     @search = Colorgem.search(params[:q])
     @colorgems = @search.result.paginate(page: params[:page], per_page: 10)
     @allcolorgems = Colorgem.all
+
+
     respond_to do |format|
       format.html
       format.csv { send_data @allcolorgems.to_csv}
@@ -77,7 +79,7 @@ class ColorgemsController < ApplicationController
   def update
     respond_to do |format|
       if @colorgem.update(colorgem_params)
-        format.html { redirect_to @colorgem, notice: 'Colorgem was successfully updated.' }
+        format.html { redirect_to welcome_ownerlist_path, notice: 'Colorgem was successfully updated.' }
         format.json { render :show, status: :ok, location: @colorgem }
       else
         format.html { render :edit }

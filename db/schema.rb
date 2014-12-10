@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20141209154857) do
     t.decimal  "price"
     t.string   "secondcolor"
     t.string   "image"
-    t.string   "listingstatus",      default: "0"
+    t.integer  "listingstatus",      default: 0
     t.boolean  "killstatus"
   end
 

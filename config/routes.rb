@@ -29,7 +29,11 @@ Rails.application.routes.draw do
   end
 
    resources :messages
-  resources :conversations
+  resources :conversations do
+    collection do
+      post 'add_request', to: 'conversations#add_request'
+    end 
+  end
 
   get 'welcome/home'
   get 'welcome/about'

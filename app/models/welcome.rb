@@ -1,5 +1,5 @@
 class Welcome < ActiveRecord::Base
-	
+		
 	def self.to_csv(options = {})
 		CSV.generate(options) do |csv|
 			csv << column_names
@@ -35,7 +35,6 @@ class Welcome < ActiveRecord::Base
 		else
 			inputrow = colorgems
 		end
-
 
 		spreadsheet = open_spreadsheet(file)
 		header = spreadsheet.row(1)

@@ -21,7 +21,8 @@
             <th>Width</th>
             <th>Weight</th>
             <th>Gemscertificate</th>
-            <th colspan="5"></th>
+            <th>Status</th>
+            <th colspan="4"></th>
           </tr>
         </thead>
 
@@ -36,43 +37,47 @@
             <td><%= colorgem.width %></td>
             <td><%= colorgem.weight %></td>
             <td><%= colorgem.gemscertificate %></td>
+            <td><%= colorgem.listingstatus %></td>
             <td><%= link_to 'Show', colorgem %></td>
             <td><%= link_to 'Edit', edit_colorgem_path(colorgem) %></td>
-            <td><%= link_to 'Delete', colorgem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <td><%= colorgem.listingstatus %></td>
             <td>
-               <%= form_for colorgem do |t| %>
-     <%= t.hidden_field :listingstatus, :value => "disabled"%>
-     <%= t.submit "change_name_to_disabled" %>
-   <% end %>
+              <% if colorgem.active? %>
+                <%= form_for colorgem do |t| %>
+                  <%= t.hidden_field :listingstatus, :value => "disabled"%>
+                  <%= t.submit "Disable Listing" %>
+                <% end %>
+              <% else %>
+                <%= form_for colorgem do |t| %>
+                  <%= t.hidden_field :listingstatus, :value => "active"%>
+                  <%= t.submit "Activating Listing" %>
+                <% end %>
+             <% end %>
+
+           </td>
+         </tr>
+         <% end %>
+       </tbody>
+     </table>
 
 
-
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-
-
-      <%= will_paginate @colorgemspag %>
-      <p>
-        Download:
-        <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'colorgems') %> |
-        <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'colorgems') %> |<br>
-        <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
-      </p>
-      <h2>Import Colored Gems</h2>
-        <%= form_tag welcome_import_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= hidden_field_tag(:source, "colorgems") %>
-        <%= submit_tag "Import" %>
-      <% end %>
-      <% else %>
+     <%= will_paginate @colorgemspag %>
+     <p>
+      Download:
+      <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'colorgems') %> |
+      <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'colorgems') %> |<br>
       <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
-      <% end %>
-    </div>
+    </p>
+    <h2>Import Colored Gems</h2>
+    <%= form_tag welcome_import_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= hidden_field_tag(:source, "colorgems") %>
+    <%= submit_tag "Import" %>
+    <% end %>
+    <% else %>
+    <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
+    <% end %>
   </div>
+</div>
 </div>
 <div class="panel panel-default">
   <div class="panel-heading" role="tab" id="headingTwo">
@@ -132,20 +137,20 @@
         </tbody>
       </table>
 
-       <%= will_paginate @diamondspag %>
+      <%= will_paginate @diamondspag %>
       <br>
-<p>
+      <p>
         Download:
         <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'diamonds') %> |
         <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'diamonds') %> |<br>
         <%= link_to 'Create New Diamond Listing', new_diamond_path %>
       </p>
       <h2>Import Diamonds</h2>
-        <%= form_tag welcome_import_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= hidden_field_tag(:source, "diamonds") %>
-        <%= submit_tag "Import" %>
-        <% end %>
+      <%= form_tag welcome_import_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= hidden_field_tag(:source, "diamonds") %>
+      <%= submit_tag "Import" %>
+      <% end %>
 
       <% else %>
 
@@ -220,7 +225,7 @@
         </tbody>
       </table>
 
-       <%= will_paginate @colordiamondspag %>
+      <%= will_paginate @colordiamondspag %>
       <br>
       <p>
         Download:
@@ -229,10 +234,10 @@
         <%= link_to 'Create New Colored Gemstones Listing', new_colordiamond_path %>
       </p>
       <h2>Import Colored Diamonds</h2>
-        <%= form_tag welcome_import_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= hidden_field_tag(:source, "colordiamonds") %>
-        <%= submit_tag "Import" %>
+      <%= form_tag welcome_import_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= hidden_field_tag(:source, "colordiamonds") %>
+      <%= submit_tag "Import" %>
       <% end %>
       <%= link_to 'New Colordiamond', new_colordiamond_path %>
 
@@ -301,11 +306,11 @@
         <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'jewelleries') %> |<br>
         <%= link_to 'Create New Colored Gemstones Listing', new_jewellery_path %>
       </p>
-<h2>Import Jewellery Items</h2>
-        <%= form_tag welcome_import_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= hidden_field_tag(:source, "jewelleries") %>
-        <%= submit_tag "Import" %>
+      <h2>Import Jewellery Items</h2>
+      <%= form_tag welcome_import_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= hidden_field_tag(:source, "jewelleries") %>
+      <%= submit_tag "Import" %>
       <% end %>
       <%= link_to 'New Jewellery', new_jewellery_path %>
 
