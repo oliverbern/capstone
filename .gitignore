@@ -13,10 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-/tmp/cache
-/tmp/sessions
-/tmp/pids
-/tmp/sockets
+/tmp
 
 # Ignore application configuration
 /config/application.yml
