@@ -33,7 +33,8 @@ class ConversationsController < ApplicationController
 
     logger.debug stone.user_id
 
-    current_user.send_message(stone.user, "Stone Requested", "Stone #{count2}")
+    current_user.send_message(stone.user, "Stone Requested", "The Stone with the following information has been requested by: #{current_user.email}
+      Stone Information: #{stone.gemstonetype}, #{stone.color}, #{stone.weight}")
 
     redirect_to stone
   end
