@@ -7,48 +7,27 @@ class WelcomeController < ApplicationController
 		@colorgemspag = @colorgems.paginate(page: params[:page], per_page: 10)
 		@diamondspag = @diamonds.paginate(page: params[:page], per_page: 10)
 		@jewelleriespag = @jewelleries.paginate(page: params[:page], per_page: 10)
-		@colordiamondspag = @colordiamonds.paginate(page: params[:page], per_page: 10)
-
-		
-		case params[:source]
-		when 'colorgems' 
-			csv_output = @colorgems
-		when 'diamonds'
-			csv_output = @diamonds
-		when 'jewelleries'
-			csv_output = @jewelleries
-		when 'colordiamonds'
-			csv_output = @colordiamonds
-		else
-			csv_output = @colorgems
-		end
+		@colordiamondspag = @colordiamonds.paginate(page: params[:page], per_page: 10)   
 
 		respond_to do |format|
-			format.html
-			format.csv { send_data csv_output.to_csv}
-			format.xls { send_data csv_output.to_csv(col_sep: "\t") }
+			format.html	
 		end
+	end
 
-		
-		
+	def export
+       model_name = params[:source].capitalize
+       stones = model_name.constantize.where(user: current_user)
+
+	   #csv_output = instance_variable_get("@#{params[:source] || 'colorgems'}")
+       respond_to do |format|	
+			format.csv { send_data stones.to_csv}
+			format.xls { send_data stones.to_csv(col_sep: "\t") }
+		end
 
 	end
 
 	def import
-		case params[:source]
-		when 'colorgems' 
-			input = Colorgem
-		when 'diamonds'
-			input = Diamond
-		when 'jewelleries'
-			input = Jewellery
-		when 'colordiamonds'
-			input = Colordiamond
-		else
-			input = Colorgem
-		end
-
-		input.import(params[:file], current_user)
+		Welcome.import(params[:source], params[:file], current_user)
 		redirect_to  welcome_ownerlist_path, notice: "Products imported."
 	end
 end

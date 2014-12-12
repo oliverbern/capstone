@@ -25,6 +25,7 @@ gem 'carrierwave'
 gem 'fog'
 gem "figaro"
  gem 'koudoku'
+ gem 'pry-rails'
 
 gem 'haml'
 gem 'haml-rails'

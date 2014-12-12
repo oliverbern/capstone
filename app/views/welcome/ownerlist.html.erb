@@ -63,8 +63,8 @@
      <%= will_paginate @colorgemspag %>
      <p>
       Download:
-      <%= link_to "CSV", welcome_ownerlist_path(format: "csv", source: 'colorgems') %> |
-      <%= link_to "Excel", welcome_ownerlist_path(format: "xls",source: 'colorgems') %> |<br>
+      <%= link_to "CSV", welcome_export_path(format: "csv", source: 'colorgem') %> |
+      <%= link_to "Excel", welcome_export_path(format: "xls",source: 'colorgem') %> |<br>
       <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
     </p>
     <h2>Import Colored Gems</h2>

@@ -9,8 +9,9 @@ class Welcome < ActiveRecord::Base
 		end
 	end
 
-	def self.import(file, current_user)
-		case params[:source]
+	def self.import(source, file, current_user)
+		
+		case source
 		when 'colorgems' 
 			input = Colorgem
 		when 'diamonds'
@@ -23,24 +24,11 @@ class Welcome < ActiveRecord::Base
 			input = Colorgem
 		end
 
-		case params[:source]
-		when 'colorgems' 
-			inputrow = colorgems
-		when 'diamonds'
-			inputrow = diamonds
-		when 'jewelleries'
-			inputrow = jewelleries
-		when 'colordiamonds'
-			inputrow = colordiamonds
-		else
-			inputrow = colorgems
-		end
-
 		spreadsheet = open_spreadsheet(file)
 		header = spreadsheet.row(1)
 		(2..spreadsheet.last_row).each do |i|
 			row = Hash[[header, spreadsheet.row(i)].transpose]
-			colorgem = current_user.inputrow.find_by_id(row["id"]) || new #allows only to access own listings
+			colorgem = current_user.public_send(source).find_by_id(row["id"]) || current_user.public_send(source).build
 			colorgem.attributes = row.to_hash.slice(*input.attribute_names())
 			colorgem.user_id = current_user.id
 			colorgem.save!

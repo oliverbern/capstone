@@ -40,10 +40,12 @@ Rails.application.routes.draw do
   get 'welcome/contact'
   get 'welcome/upgrade'
   get 'welcome/ownerlist'
+  get 'welcome/export'
   post 'welcome/import'
   get 'welcome/mailbox'
   get 'welcome/testpage'
   get 'koudoku/index'
+
 
   root 'welcome#home'
 end
