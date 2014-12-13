@@ -75,6 +75,51 @@
 
 <h2>Request Stone</h2>
 
+
+
+<section>
+  <div class="col-md-12">
+    <h2><%= @colorgem.weight%>ct <%= @colorgem.gemstonetype %></h2>
+  </div>
+  <div class="col-md-4">
+    <p>Display Image</p>
+    <%= image_tag @colorgem.image.url %>
+   </div>
+  </div>
+<div class="col-md-8">
+  <h2>Title</h2>
+  <div class="col-md-4">
+    <h4>General Information</h4>
+    <p>Category: <%= @colorgem.gemstonetype %></p>
+    <p>Weight: <%= @colorgem.weight %></p>
+    <p>Shape: <%= @colorgem.shape %></p>
+    <p>Color: <%= @colorgem.color %></p>
+    <p>Clarity: <%= @colorgem.clarity %></p>
+    <p>Treatment: <%= @colorgem.treatment %></p>
+    <p>Price/ct: <%= @colorgem.price %></p>
+    <p>Total price: FORMULA!!!</p>
+
+    <h3>Measurements</h3>
+    <p>Length: <%= @colorgem.length %></p>
+    <p>Width: <%= @colorgem.width %></p>
+    <p>Height: <%= @colorgem.height %></p>
+    <p>No. of stones: <%= @colorgem.gemsunit %></p>
+  </div>
+
+  <div class="col-md-4">
+  <h4>Additional Information</h4>
+  <p>Color Brightness: <%= @colorgem.colorbrightness %></p>
+  <p>Second Color: <%= @colorgem.secondcolor %></p>
+  <p>Transparency: <%= @colorgem.transparency %></p>
+
+  <h3>Request Stone</h3>
+  <p><%= button_to "Add request", add_request_conversations_path(colorgem_id: @colorgem) %></p>
+  </div>
+</div>
+
+  
+  </section>
+
   
 
 
