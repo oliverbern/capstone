@@ -122,8 +122,8 @@
       </div>        </div>
     </div>
   </div>
-
 </div>
+
 <div class="col-md-12">
   <p>
     <button type="button" class="btn btn-primary btn-xs"><%= f.submit "Search" %></button>
@@ -160,23 +160,7 @@
   </tbody>
 </table>
 <div class="pagination">
-<%= will_paginate @colorgems, params: {controller: 'colorgems', action: 'index'}.merge(persist_search) %>
+<%= will_paginate @colorgems %>
 </div>
-<br>
-<p>
-  Download:
-  <%= link_to "CSV", colorgems_path(format: "csv") %> |
-  <%= link_to "Excel", colorgems_path(format: "xls") %>
-</p>
-
-<h2>Import Colored Gems</h2>
-
-<%= form_tag import_colorgems_path, multipart: true do %>
-<%= file_field_tag :file %>
-<%= submit_tag "Import" %>
-<% end %>
-
-
-<%= link_to 'New Colorgem', new_colorgem_path %>
 
 

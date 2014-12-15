@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     get :autocomplete_colorgem_gemstonetype, :on => :collection
   end
 
-  resources :subscriptions
+
 
    resources :messages
   resources :conversations do
