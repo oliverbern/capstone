@@ -83,14 +83,13 @@ $(function() {
     $( "#colorgem_gemstonetype" ).autocomplete({ source: colorgemTags });
 
     var shapeTags = <%= @autoshape.html_safe %>;
-    $( "#colorgem_shape" ).autocomplete({
-      source: shapeTags
-    });
+    $( "#colorgem_shape" ).autocomplete({ source: shapeTags });
 
     var colorTags = <%= @autocolor.html_safe %>;
     $( "#colorgem_color" ).autocomplete({ source: colorTags });
 
-
+    var clarityTags = <%= @autoclarity.html_safe %>;
+    $( "#colorgem_clarity" ).autocomplete({ source: clarityTags });
 
   });
 </script>

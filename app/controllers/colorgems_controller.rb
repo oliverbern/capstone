@@ -7,9 +7,9 @@ class ColorgemsController < ApplicationController
   # GET /colorgems
   # GET /colorgems.json
   def index
-    @search = Colorgem.search(params[:q])
-    @colorgems = @search.result.paginate(page: params[:page], per_page: 10)
-    @allcolorgems = Colorgem.all
+      @search = Colorgem.search(params[:q])
+      @colorgems = @search.result.paginate(page: params[:page], per_page: 10)
+      @allcolorgems = Colorgem.all
 
 
     respond_to do |format|
@@ -43,7 +43,7 @@ class ColorgemsController < ApplicationController
     #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
     @autoshape = ["Oval"].to_s
     @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s
-    @autoclarity = []
+    @autoclarity = ["Loupe-clean", "Eye-clean", "Few, small inclusions visible", "Few, medium inclusions visible", "Few, large inclusions visible", "Many inclusions visible", "A lot of inclusions visible", "No indications"].to_s
 
   end
 

@@ -1,32 +1,33 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :line_items
- 
-  resources :carts
 
   resources :jewelleries do
   collection { post :import }
-    collection { post :search, to: "jewelleries#index" }
+    
   end
 
   resources :colordiamonds do
   collection { post :import }
-    collection { post :search, to: "colordiamonds#index" }
+    
   end
 
   resources :diamonds do
   collection { post :import }
-    collection { post :search, to: "diamonds#index" }
+    
   end
 
     devise_for :users
   
   resources :colorgems do
     collection { post :import }
-    collection { post :search, to: "colorgems#index" }
+    collection do
+      get :search, to: "colorgems#index"
+    end
     get :autocomplete_colorgem_gemstonetype, :on => :collection
   end
+
+  resources :subscriptions
 
    resources :messages
   resources :conversations do

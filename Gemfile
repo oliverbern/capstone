@@ -24,8 +24,9 @@ gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem 'fog'
 gem "figaro"
- gem 'koudoku'
+ gem 'koudoku', github: 'andrewculver/koudoku'
  gem 'pry-rails'
+ gem 'stripe'
 
 gem 'haml'
 gem 'haml-rails'
