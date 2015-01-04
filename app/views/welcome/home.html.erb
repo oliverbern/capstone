@@ -1,80 +1,85 @@
 <% if user_signed_in? %>
-<section id="portfolio" class="bg-light-gray">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">Verfügbare Kategorien</h2>
-                            
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/roundicons.jpg')%>" class="img-responsive" alt="" height="160" width="247">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Colored Gemstones</h4>
-                                <p><%= link_to 'Create Colored Gemstones', new_colorgem_path %></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/startup-framework.jpg') %>" class="img-responsive" alt="" height="160" width="247">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Diamonds</h4>
-                                <p><%= link_to 'Create Diamond', new_diamond_path %></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/treehouse.jpg') %>" class="img-responsive" alt="" height="160">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Colored Diamonds</h4>
-                                <p class="text-muted">Website Design</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/golden.jpg') %>" class="img-responsive" alt="" height="160" width="247">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Jewellery</h4>
-                                <p class="text-muted">Website Design</p>
-                            </div>
-                        </div>
+    <% if current_user.role = "checkuser" %>
+        <p>Your account will be checked by FLIPGEMSTONES.COM - Thank you for your patience. For questions, please contact confirmation@flipgemstones.com</p>
+    <% else %>
+        <section id="portfolio" class="bg-light-gray">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Verfügbare Kategorien</h2>
 
                     </div>
                 </div>
-            </section>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="<%= image_path('portfolio/roundicons.jpg')%>" class="img-responsive" alt="" height="160" width="247">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Colored Gemstones</h4>
+                            <p><%= link_to 'Create Colored Gemstones', new_colorgem_path %></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="<%= image_path('portfolio/startup-framework.jpg') %>" class="img-responsive" alt="" height="160" width="247">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Diamonds</h4>
+                            <p><%= link_to 'Create Diamond', new_diamond_path %></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="<%= image_path('portfolio/treehouse.jpg') %>" class="img-responsive" alt="" height="160">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Colored Diamonds</h4>
+                            <p class="text-muted">Website Design</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 portfolio-item">
+                        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="<%= image_path('portfolio/golden.jpg') %>" class="img-responsive" alt="" height="160" width="247">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Jewellery</h4>
+                            <p class="text-muted">Website Design</p>
+                        </div>
+                    </div>
 
-<% if current_user.role = "standarduser" %>
-<h2>Want more functions?</h2>
-<p>Upgrade to a Silver or Gold account for extended filters, upload function and offer stones on flipgemstones.com</p>
-<h4><%= link_to "Upgrade here", welcome_upgrade_path %> </h4>
+                </div>
+            </div>
+        </section>
+    
+
+    <% if current_user.role = "standarduser" %>
+    <h2>Want more functions?</h2>
+    <p>Upgrade to a Silver or Gold account for extended filters, upload function and offer stones on flipgemstones.com</p>
+    <h4><%= link_to "Upgrade here", welcome_upgrade_path %> </h4>
+    <% else %>
 <% end %>
-
+<% end %>
 
 <% else %>
 
@@ -88,7 +93,7 @@
             <li><p>Buy and sell gemstones from repuatable dealers</p><br></li>
 
         </div>
-           <div class="col-md-4 signuphome">
+        <div class="col-md-4 signuphome">
             <h4>Already have an account? <%= link_to "Sign In here", new_user_session_path %>.</h4>
             <h2>Sign up</h2>
             <br>
@@ -97,162 +102,161 @@
             <%= devise_error_messages! %> 
             <div class="form-group">
               <%= f.text_field :first_name, :placeholder => "First Name" %>
-            </div>
+          </div>
 
-            <div class="form-group">
+          <div class="form-group">
               <%= f.text_field :last_name, :placeholder => "Last Name" %>
-            </div>
+          </div>
 
-              <div class="form-group">
+          <div class="form-group">
               <%= f.text_field :company, :placeholder => "Company" %>
-            </div>
+          </div>
 
-            <div class="form-group">
+          <div class="form-group">
               <%= f.text_field :phone, :placeholder => "Phone" %>
-            </div>
+          </div>
 
-            <div class="form-group">
+          <div class="form-group">
               <%= f.text_field :email, :placeholder => "Email" %>
-            </div>
+          </div>
+
+          <div class="form-group">
+              <%= f.password_field :password, :placeholder => "Password" %></div>
 
               <div class="form-group">
-                  <%= f.password_field :password, :placeholder => "Password" %></div>
+                  <%= f.password_field :password_confirmation, :placeholder => "Password confirmation" %></div>
 
-                  <div class="form-group">
-                      <%= f.password_field :password_confirmation, :placeholder => "Password confirmation" %></div>
+                  <div><%= f.submit "Sign up" %></div>
+                  <% end %>
+              </form>
+          </div>
 
-                      <div><%= f.submit "Sign up" %></div>
-                      <% end %>
-                        </form>
+      </div>
+
+      <hr>
+
+      <!-- Services Section -->
+      <section id="services">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Vorteile von Flipgemstones</h2>
+                    <h3 class="section-subheading text-muted">Edelsteine, Diamanten und Schmuck</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Überprüfung & Sicherheit</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Filter und Import</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Unterstützung</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+            </div>
         </div>
+    </section>
+    <hr>
 
-    </div>
-
-              <hr>
-
-              <!-- Services Section -->
-              <section id="services">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">Vorteile von Flipgemstones</h2>
-                            <h3 class="section-subheading text-muted">Edelsteine, Diamanten und Schmuck</h3>
+    <!-- Category Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Verfügbare Kategorien</h2>
+                    <h3 class="section-subheading text-muted">Kaufen und Verkaufen einfach gemacht!</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-md-4">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <h4 class="service-heading">Überprüfung & Sicherheit</h4>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                        </div>
-                        <div class="col-md-4">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <h4 class="service-heading">Filter und Import</h4>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                        </div>
-                        <div class="col-md-4">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <h4 class="service-heading">Unterstützung</h4>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                        </div>
+                        <img src="<%= image_path('portfolio/roundicons.jpg') %>" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Colored Gemstones</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
-            </section>
-            <hr>
-
-            <!-- Category Grid Section -->
-            <section id="portfolio" class="bg-light-gray">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">Verfügbare Kategorien</h2>
-                            <h3 class="section-subheading text-muted">Kaufen und Verkaufen einfach gemacht!</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/roundicons.jpg') %>" class="img-responsive" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Colored Gemstones</h4>
-                                <p class="text-muted"></p>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/startup-framework.jpg') %>" class="img-responsive" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Diamonds</h4>
-                                <p class="text-muted"></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/treehouse.jpg') %>" class="img-responsive" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Colored Diamonds</h4>
-                                <p class="text-muted"></p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="<%= image_path('portfolio/golden.jpg') %>" class="img-responsive" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Jewellery</h4>
-                                <p class="text-muted"></p>
-                            </div>
-                        </div>
-
+                        <img src="<%= image_path('portfolio/startup-framework.jpg') %>" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Diamonds</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
-            </section>
-
-            <hr>
-            <!-- Premium Stones -->
-            <section id="portfolio" class="bg-light-gray">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">Premium Inserate</h2>
-                            <h3 class="section-subheading text-muted">Coming Soon</h3>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
                         </div>
+                        <img src="<%= image_path('portfolio/treehouse.jpg') %>" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Colored Diamonds</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
-            </section>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="<%= image_path('portfolio/golden.jpg') %>" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Jewellery</h4>
+                        <p class="text-muted"></p>
+                    </div>
+                </div>
 
-            <hr>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <!-- Premium Stones -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Premium Inserate</h2>
+                    <h3 class="section-subheading text-muted">Coming Soon</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
 <% end %>
-          
