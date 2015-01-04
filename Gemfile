@@ -31,6 +31,7 @@ gem "figaro"
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'sqlite3'
