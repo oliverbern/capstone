@@ -26,6 +26,13 @@ GIT
       stripe
 
 GIT
+  remote: git://github.com/stefanpenner/country_select.git
+  revision: d3ba0b99beacf66f189816db88ed46342698b539
+  specs:
+    country_select (2.1.0)
+      countries (~> 0.9, >= 0.9.3)
+
+GIT
   remote: https://github.com/francisd/rails3-jquery-autocomplete
   revision: 9884a40f2bb1a8fa3ffab445e6d2c74c3ee99a0d
   specs:
@@ -92,6 +99,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
     devise (3.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -329,6 +339,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   carrierwave
   coffee-rails (~> 4.0.0)
+  country_select!
   devise
   figaro
   fog

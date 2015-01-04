@@ -1,4 +1,5 @@
 class ColorgemsController < ApplicationController
+  
    
   before_action :set_colorgem, only: [:show, :edit, :update, :destroy]
 
@@ -34,6 +35,7 @@ class ColorgemsController < ApplicationController
   # GET /colorgems/1
   # GET /colorgems/1.json
   def show
+    
   end
 
   # GET /colorgems/new

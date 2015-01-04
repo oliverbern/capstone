@@ -1,47 +1,53 @@
-<section>
-<div class="row">
-  <div class="col-md-4">
-    <h2><%= @colorgem.weight%>ct <%= @colorgem.gemstonetype %></h2>
-    <br>
-    <div class="img-responsive">
-        <%= image_tag @colorgem.image.url, :size => "200x200" %>
+
+<% if user_signed_in? %>
+    <section>
+    <div class="row">
+      <div class="col-md-4">
+        <h2><%= @colorgem.weight%>ct <%= @colorgem.gemstonetype %></h2>
+        <br>
+        <div class="img-responsive">
+            <%= image_tag @colorgem.image.url, :size => "200x200" %>
+          </div>
       </div>
-  </div>
 
-<div class="col-md-8">
-  <h2></h2>
-  <div class="col-md-4">
-    <h4>General Information</h4>
-    <p>Category: <%= @colorgem.gemstonetype %></p>
-    <p>Weight: <%= @colorgem.weight %></p>
-    <p>Shape: <%= @colorgem.shape %></p>
-    <p>Color: <%= @colorgem.color %></p>
-    <p>Clarity: <%= @colorgem.clarity %></p>
-    <p>Treatment: <%= @colorgem.treatment %></p>
-    <p>Price/ct: <%= @colorgem.price %></p>
-    <p>Total price: FORMULA!!!</p>
+    <div class="col-md-8">
+      <h2></h2>
+      <div class="col-md-4">
+        <h4>General Information</h4>
+        <p>Category: <%= @colorgem.gemstonetype %></p>
+        <p>Weight: <%= @colorgem.weight %></p>
+        <p>Shape: <%= @colorgem.shape %></p>
+        <p>Color: <%= @colorgem.color %></p>
+        <p>Clarity: <%= @colorgem.clarity %></p>
+        <p>Treatment: <%= @colorgem.treatment %></p>
+        <p>Price/ct: <%= @colorgem.price %></p>
+        <p>Total price (CHF): <%= @colorgem.weight.to_i * @colorgem.price.to_i %></p>
 
-    <h3>Measurements</h3>
-    <p>Length: <%= @colorgem.length %>mm</p>
-    <p>Width: <%= @colorgem.width %>mm</p>
-    <p>Height: <%= @colorgem.height %>mm</p>
-    <p>No. of stones: <%= @colorgem.gemsunit %></p>
-  </div>
+        <h3>Measurements</h3>
+        <p>Length: <%= @colorgem.length %>mm</p>
+        <p>Width: <%= @colorgem.width %>mm</p>
+        <p>Height: <%= @colorgem.height %>mm</p>
+        <p>No. of stones: <%= @colorgem.gemsunit %></p>
+      </div>
 
-  <div class="col-md-4">
-    <h4>Additional Information</h4>
-    <p>Color Brightness: <%= @colorgem.colorbrightness %></p>
-    <p>Second Color: <%= @colorgem.secondcolor %></p>
-    <p>Transparency: <%= @colorgem.transparency %></p>
+      <div class="col-md-4">
+        <h4>Additional Information</h4>
+        <p>Color Brightness: <%= @colorgem.colorbrightness %></p>
+        <p>Second Color: <%= @colorgem.secondcolor %></p>
+        <p>Transparency: <%= @colorgem.transparency %></p>
 
-    <h3>Request Stone</h3>
-    <p>The owner of the stone will receive a message with your company name, email and phone number via the flipgemstones.com message system.</p>
-    <p><%= button_to "Add request", add_request_conversations_path(colorgem_id: @colorgem) %></p>
-  </div>
-</div>
-</div>
-<%= link_to "Back", :back %>
-</section>
+        <h3>Request Stone</h3>
+        <p>The owner of the stone will receive a message with your company name, email and phone number via the flipgemstones.com message system.</p>
+        <p><%= button_to "Add request", add_request_conversations_path(colorgem_id: @colorgem) %></p>
+      </div>
+    </div>
+    </div>
+    <%= link_to "Back", :back %>
+    </section>
+<% else %>
+<p>Interested in the stone? <%= link_to "Please register here for a free account.",  new_user_registration_path %></p>
+<h4>Already have an account? <%= link_to "Please login here.", new_user_session_path %></h4>
+<% end %>
 
 
 

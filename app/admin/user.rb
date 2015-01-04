@@ -1,5 +1,16 @@
 ActiveAdmin.register User do
 
+  index do
+    column :id
+    column :email
+    column :role
+    column :company
+    column :phone
+    column :first_name
+    column :last_name
+
+  end
+
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
