@@ -3,7 +3,9 @@
   <div class="col-md-4">
     <h2><%= @colorgem.weight%>ct <%= @colorgem.gemstonetype %></h2>
     <br>
+    <div class="img-responsive">
         <%= image_tag @colorgem.image.url, :size => "200x200" %>
+      </div>
   </div>
 
 <div class="col-md-8">
@@ -33,6 +35,7 @@
     <p>Transparency: <%= @colorgem.transparency %></p>
 
     <h3>Request Stone</h3>
+    <p>The owner of the stone will receive a message with your company name, email and phone number via the flipgemstones.com message system.</p>
     <p><%= button_to "Add request", add_request_conversations_path(colorgem_id: @colorgem) %></p>
   </div>
 </div>

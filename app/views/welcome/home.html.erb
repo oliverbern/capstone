@@ -15,11 +15,11 @@
                                         <i class="fa fa-plus fa-3x"></i>
                                     </div>
                                 </div>
-                                <img src="<%= image_path('portfolio/roundicons.jpg') %>" class="img-responsive" alt="">
+                                <img src="<%= image_path('portfolio/roundicons.jpg')%>" class="img-responsive" alt="" height="160" width="247">
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Colored Gemstones</h4>
-                                <p class="text-muted">Über XXXX Edelsteine</p>
+                                <p><%= link_to 'Create Colored Gemstones', new_colorgem_path %></p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 portfolio-item">
@@ -29,11 +29,11 @@
                                         <i class="fa fa-plus fa-3x"></i>
                                     </div>
                                 </div>
-                                <img src="<%= image_path('portfolio/startup-framework.jpg') %>" class="img-responsive" alt="">
+                                <img src="<%= image_path('portfolio/startup-framework.jpg') %>" class="img-responsive" alt="" height="160" width="247">
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Diamonds</h4>
-                                <p class="text-muted">Website Design</p>
+                                <p><%= link_to 'Create Diamond', new_diamond_path %></p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 portfolio-item">
@@ -43,7 +43,7 @@
                                         <i class="fa fa-plus fa-3x"></i>
                                     </div>
                                 </div>
-                                <img src="<%= image_path('portfolio/treehouse.jpg') %>" class="img-responsive" alt="">
+                                <img src="<%= image_path('portfolio/treehouse.jpg') %>" class="img-responsive" alt="" height="160">
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Colored Diamonds</h4>
@@ -57,7 +57,7 @@
                                         <i class="fa fa-plus fa-3x"></i>
                                     </div>
                                 </div>
-                                <img src="<%= image_path('portfolio/golden.jpg') %>" class="img-responsive" alt="">
+                                <img src="<%= image_path('portfolio/golden.jpg') %>" class="img-responsive" alt="" height="160" width="247">
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Jewellery</h4>
@@ -72,7 +72,7 @@
 <% if current_user.role = "standarduser" %>
 <h2>Want more functions?</h2>
 <p>Upgrade to a Silver or Gold account for extended filters, upload function and offer stones on flipgemstones.com</p>
-<h4><%= link_to "Upgrade here", root_path %> </h4>
+<h4><%= link_to "Upgrade here", welcome_upgrade_path %> </h4>
 <% end %>
 
 
