@@ -1,17 +1,13 @@
 <section>
-  <div class="col-md-12">
-    <h2><%= @colorgem.weight%>ct <%= @colorgem.gemstonetype %></h2>
-  </div>
 <div class="row">
-<div class="col-md-4">
-    <p>Display Image</p>
-    <div class="showimage">
-    <%= image_tag @colorgem.image.url %>
+  <div class="col-md-4">
+    <h2><%= @colorgem.weight%>ct <%= @colorgem.gemstonetype %></h2>
+    <br>
+        <%= image_tag @colorgem.image.url, :size => "200x200" %>
   </div>
- </div>
 
 <div class="col-md-8">
-  <h2>Title</h2>
+  <h2></h2>
   <div class="col-md-4">
     <h4>General Information</h4>
     <p>Category: <%= @colorgem.gemstonetype %></p>
@@ -24,9 +20,9 @@
     <p>Total price: FORMULA!!!</p>
 
     <h3>Measurements</h3>
-    <p>Length: <%= @colorgem.length %></p>
-    <p>Width: <%= @colorgem.width %></p>
-    <p>Height: <%= @colorgem.height %></p>
+    <p>Length: <%= @colorgem.length %>mm</p>
+    <p>Width: <%= @colorgem.width %>mm</p>
+    <p>Height: <%= @colorgem.height %>mm</p>
     <p>No. of stones: <%= @colorgem.gemsunit %></p>
   </div>
 
@@ -41,6 +37,7 @@
   </div>
 </div>
 </div>
+<%= link_to "Back", :back %>
 </section>
 
 

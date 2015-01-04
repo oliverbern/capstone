@@ -1,5 +1,5 @@
 
-<h2>Currently: 39484 Gemstones available</h2>
+<h2>Currently: <%= Colorgem.all.size %> colored gemstones available</h2>
 
 <%= search_form_for @search do |f| %>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -58,6 +58,7 @@
     </div>
   </div>
 
+  <% if current_user.role == "silveruser" && "golduser" && "admin"%>
   <div class="panel panel-default hidden-xs">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
@@ -76,9 +77,9 @@
             </div></p>
             <p><div class="field">
               <%= f.label :height_gteq, "Height " %>
-              <%= f.text_field :height_gteq %> 
+              <%= f.text_field :height_gteq%> 
               <%= f.label :height_lteq, "-" %>
-              <%= f.text_field :height_lteq %> 
+              <%= f.text_field :height_lteq%> 
             </div></p>
           </div>
           <div class="col-md-4 ">
@@ -122,16 +123,18 @@
       </div>        </div>
     </div>
   </div>
+  <% end %>
 </div>
-
+<br>
 <div class="col-md-12">
   <p>
-    <button type="button" class="btn btn-primary btn-xs"><%= f.submit "Search" %></button>
+    <button class="btn btn-primary btn-xs"><%= f.submit "Search" %></button>
   </p>
 </div>
 <% end %>
 <br>
-
+<br>
+<br>
 <table class="table table-hover table-condensed table-bordered">
   <thead>
     <tr>
@@ -148,7 +151,7 @@
   <tbody>
     <% @colorgems.each do |colorgem| %>
     <tr>
-      <td><%= image_tag colorgem.image.url %></td>
+      <td><%= link_to (image_tag colorgem.image.url, :size => "80x80"), colorgem %></td>
       <td><%= link_to colorgem.gemstonetype, colorgem %></td>
       <td><%= colorgem.color %></td>
       <td><%= colorgem.shape %></td>

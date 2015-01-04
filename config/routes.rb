@@ -45,8 +45,11 @@ Rails.application.routes.draw do
   post 'welcome/import'
   get 'welcome/mailbox'
   get 'welcome/testpage'
-  get 'koudoku/index'
-
+  #get 'koudoku/index'
+  mount Koudoku::Engine, at: 'koudoku'
+  scope module: 'koudoku' do
+    get 'pricing' => 'subscriptions#index', as: 'pricing'
+  end
 
   root 'welcome#home'
 end
