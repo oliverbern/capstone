@@ -32,8 +32,8 @@
            </ul>
          </li>       
          <% else %>
-         <li><%= link_to "Sign In", new_user_session_path %></li>
-         <li><%= link_to "Create New Account", new_user_registration_path %></li>  
+         <li class="hidden-sm"><%= link_to "Sign In", new_user_session_path %></li>
+         <li class="hidden-sm"><%= link_to "Create New Account", new_user_registration_path %></li>  
          <% end %>
        </ul>
      </ul>
@@ -42,3 +42,6 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 </header>
+<script>
+$('.collapse').collapse()
+</script>
