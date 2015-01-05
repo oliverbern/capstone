@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-    <% if current_user.role = "checkuser" %>
+    <% if current_user.role == "checkuser" %>
         <p>Your account will be checked by FLIPGEMSTONES.COM - Thank you for your patience. For questions, please contact confirmation@flipgemstones.com</p>
     <% else %>
         <section id="portfolio" class="bg-light-gray">
@@ -86,12 +86,9 @@
 
     <div class="row">
         <div class="col-md-8 hidden-xs hidden-sm flipbanner">
-            <h2>Welcome to FLIPGEMSTONES.COM</h2>
+            <h3>FLIPGEMSTONES.COM - Trade Gemstones</h3>
             <br>
-            <li><p>Buy and sell gemstones from/to repuatable dealers</p><br></li>
-            <li><p>Easy filters to find your desired stone</p><br></li>
-            <li><p>Use upload function to import your inventory</p><br></li>
-
+            
         </div>
         <div class="col-md-4 signuphome">
             <h4>Already have an account? <%= link_to "Sign In here", new_user_session_path %>.</h4>
@@ -140,8 +137,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Vorteile von Flipgemstones</h2>
-                    <h3 class="section-subheading text-muted">Edelsteine, Diamanten und Schmuck</h3>
+                    <h2 class="section-heading">Flipgemstones's Advanatges</h2>
+                    <h3 class="section-subheading text-muted">Colored Gemstones, Diamonds and Jewellery</h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -150,24 +147,24 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Überprüfung & Sicherheit</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Control & Security</h4>
+                    <p class="text-muted">Each registration will be evaluated so that only members of the industry will be present in the marketplace.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Filter und Import</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Filter and Import</h4>
+                    <p class="text-muted">Search through the database with ease. Upgrade your account the silver or gold for advanced filter and import functions.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Unterstützung</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Support</h4>
+                    <p class="text-muted">We are here to help. Email, call or message us if you have any questions.</p>
                 </div>
             </div>
         </div>
@@ -179,8 +176,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Verfügbare Kategorien</h2>
-                    <h3 class="section-subheading text-muted">Kaufen und Verkaufen einfach gemacht!</h3>
+                    <h2 class="section-heading">Available Categories</h2>
+                    <h3 class="section-subheading text-muted">Simply buy and sell!</h3>
                 </div>
             </div>
             <div class="row">
@@ -195,6 +192,7 @@
                     </a>
                     <div class="portfolio-caption">
                         <h4>Colored Gemstones</h4>
+                        <% link_to "Colored Gemstones", colorgems_path %>
                         <p class="text-muted"></p>
                     </div>
                 </div>
