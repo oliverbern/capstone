@@ -2,42 +2,43 @@
 <h2>Currently: <%= Colorgem.all.size %> colored gemstones available</h2>
 
 <%= search_form_for @search do |f| %>
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        
           Basic Search
-        </a>
+      
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in " role="tabpanel" aria-labelledby="headingOne">
+    
       <div class="panel-body">
        <div class="row">
+        <br>
         <div class="col-md-4">
+
           <p><div class="field">
             <%= f.label :gemstonetype_cont, "Stone Type" %>
             <%= f.text_field :gemstonetype_cont %>
           </div></p>
           <p><div class="field">
-            <%= f.label :weight_gteq, "Weight " %>
-            <%= f.text_field :weight_gteq, :size=>10, :style=>"width: initial" %> 
+            <%= f.label :weight_gteq, "Weight (ct) " %>
+            <%= f.text_field :weight_gteq, :size=>5, :style=>"width: initial" %> 
             <%= f.label :weight_lteq, "-" %>
-            <%= f.text_field :weight_lteq %> 
+            <%= f.text_field :weight_lteq, :size=>5, :style=>"width: initial" %> 
           </div></p>
         </div>
         <div class="col-md-4 ">
           <p><div class="field">
-            <%= f.label :length_gteq, "Length " %>
-            <%= f.text_field :length_gteq %> 
+            <%= f.label :length_gteq, "Length (mm) " %>
+            <%= f.text_field :length_gteq, :size=>5, :style=>"width: initial" %> 
             <%= f.label :length_lteq, "-" %>
-            <%= f.text_field :length_lteq %> 
+            <%= f.text_field :length_lteq, :size=>5, :style=>"width: initial" %> 
           </div></p>
           <p><div class="field">
-            <%= f.label :width_gteq, "Width " %>
-            <%= f.text_field :width_gteq %> 
+            <%= f.label :width_gteq, "Width (mm) " %>
+            <%= f.text_field :width_gteq, :size=>5, :style=>"width: initial" %> 
             <%= f.label :width_lteq, "-" %>
-            <%= f.text_field :width_lteq %> 
+            <%= f.text_field :width_lteq, :size=>5, :style=>"width: initial" %> 
           </div></p>
         </div>
         <div class="col-md-4">
@@ -54,9 +55,8 @@
 
         </div>
         <br>  
-      </div>
     </div>
-  </div>
+  
 
   <% if user_signed_in? %>
   <% if current_user.role = "silveruser" || "golduser" || "admin"%>
