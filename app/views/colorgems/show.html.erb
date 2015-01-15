@@ -1,5 +1,9 @@
 
 <% if user_signed_in? %>
+<% if current_user.role == "checkuser" %>
+    <p>Once your account has been approved you can access all information about stones and send requests. <strong>Activation should happen within 24h.</strong> If you have any questions, please contact the FLIPGEMSTONES team at registrations@flipgemstones.com </p>
+    <p>In the meantime, please add all required information to your account <%= link_to "Add Information to my account", edit_user_registration_path %></p>
+<% else %>
     <section>
     <div class="row">
       <div class="col-md-4">
@@ -44,6 +48,7 @@
     </div>
     <%= link_to "Back", :back %>
     </section>
+    <% end %>
 <% else %>
 <p>Interested in the stone? <%= link_to "Please register here for a free account.",  new_user_registration_path %></p>
 <h4>Already have an account? <%= link_to "Please login here.", new_user_session_path %></h4>

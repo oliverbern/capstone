@@ -22,14 +22,25 @@ class Colorgem < ActiveRecord::Base
 	end
 
 	def self.import(file, current_user)
+
 		spreadsheet = open_spreadsheet(file)
 		header = spreadsheet.row(1)
 		(2..spreadsheet.last_row).each do |i|
 			row = Hash[[header, spreadsheet.row(i)].transpose]
-			colorgem = current_user.colorgems.find_by_id(row["id"]) || new #allows only to access own listings
-			colorgem.attributes = row.to_hash.slice(*Colorgem.attribute_names())
-			colorgem.user_id = current_user.id
-			colorgem.save!
+			gemstonestype = row['gemstonetype'].strip
+			if gemstonestype == nil || gemstonestype.size == 0
+			  next
+			else
+
+				colorgem = current_user.colorgems.find_by_id(row["id"]) || new #allows only to access own listings
+				colorgem.attributes = row.to_hash.slice(*Colorgem.attribute_names())
+				colorgem.user_id = current_user.id
+				colorgem.save!
+            end
+
+			# find_or_create(...) do
+			# 
+			# end
 		end
 	end
 

@@ -28,10 +28,15 @@ class Welcome < ActiveRecord::Base
 		header = spreadsheet.row(1)
 		(2..spreadsheet.last_row).each do |i|
 			row = Hash[[header, spreadsheet.row(i)].transpose]
-			colorgem = current_user.public_send(source).find_by_id(row["id"]) || current_user.public_send(source).build
-			colorgem.attributes = row.to_hash.slice(*input.attribute_names())
-			colorgem.user_id = current_user.id
-			colorgem.save!
+			gemstonestype = row['gemstonetype']
+			if gemstonestype == nil
+			  next
+			else
+				colorgem = current_user.public_send(source).find_by_id(row["id"]) || current_user.public_send(source).build
+				colorgem.attributes = row.to_hash.slice(*input.attribute_names())
+				colorgem.user_id = current_user.id
+				colorgem.save!
+			end
 		end
 	end
 
