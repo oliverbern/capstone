@@ -24,8 +24,7 @@ gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem 'fog'
 gem "figaro"
- gem 'koudoku', github: 'andrewculver/koudoku'
- gem 'pry-rails'
+gem 'pry-rails'
 
 
 gem 'haml'
@@ -36,8 +35,8 @@ gem 'country_select', github: 'stefanpenner/country_select'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :development, :test do
-  gem 'sqlite3'
+	gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+	gem 'pg'
 end

@@ -123,6 +123,9 @@
               <div class="form-group">
                   <%= f.password_field :password_confirmation, :placeholder => "Password confirmation" %></div>
 
+            <p>With sending your registration you accept our privacy policy. <%= link_to "Privacy Policy", welcome_privacy_policy_path %></p>
+            <br>
+
                   <div><%= f.submit "Sign up" %></div>
                   <% end %>
               </form>
