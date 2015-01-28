@@ -35,6 +35,7 @@ class Welcome < ActiveRecord::Base
 				colorgem = current_user.public_send(source).find_by_id(row["id"]) || current_user.public_send(source).build
 				colorgem.attributes = row.to_hash.slice(*input.attribute_names())
 				colorgem.user_id = current_user.id
+				colorgem.image = File.open(Path.join('sdadsadsda', row['file']))
 				colorgem.save!
 			end
 		end

@@ -149,7 +149,11 @@
   <tbody>
     <% @colorgems.each do |colorgem| %>
     <tr>
-      <td><%= link_to (image_tag colorgem.image.url, :size => "80x80"), colorgem %></td>
+      <% if user_signed_in? %>
+        <td><%= link_to (image_tag colorgem.image.url, :size => "80x80"), colorgem %></td>
+      <% else %>
+        <td><%= link_to "To see image, please register", new_user_registration_path %></td>
+      <% end %>
       <td><%= link_to colorgem.gemstonetype, colorgem %></td>
       <td><%= colorgem.color %></td>
       <td><%= colorgem.shape %></td>
