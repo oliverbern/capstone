@@ -1,4 +1,4 @@
-
+<div class="container nav70">
 <h2>Currently: <%= Colorgem.all.size %> colored gemstones available</h2>
 
 <%= search_form_for @search do |f| %>
@@ -126,17 +126,17 @@
 <br>
 <div class="col-md-12">
   <p>
-    <button class="btn btn-primary btn-xs"><%= f.submit "Search" %></button>
+    <%= f.submit "Search", :class => "btn btn-primary btn-xs" %>
   </p>
 </div>
 <% end %>
 <br>
 <br>
 <br>
-<table class="table table-hover table-condensed table-bordered">
+<table class="table table-hover table-condensed table-striped">
   <thead>
     <tr>
-      <th>Image</th></div>
+      <th>Image</th>
       <th>Category</th>
       <th>Color</th>
       <th>Shape</th>
@@ -166,6 +166,7 @@
 </table>
 <div class="pagination">
 <%= will_paginate @colorgems %>
+</div>
 </div>
 
 

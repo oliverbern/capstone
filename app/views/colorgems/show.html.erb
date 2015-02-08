@@ -4,6 +4,7 @@
     <p>Once your account has been approved you can access all information about stones and send requests. <strong>Activation should happen within 24h.</strong> If you have any questions, please contact the FLIPGEMSTONES team at registrations@flipgemstones.com </p>
     <p>In the meantime, please add all required information to your account <%= link_to "Add Information to my account", edit_user_registration_path %></p>
 <% else %>
+<div class="container nav70">
     <section>
     <div class="row">
       <div class="col-md-4">
@@ -42,16 +43,19 @@
 
         <h3>Request Stone</h3>
         <p>The owner of the stone will receive a message with your company name, email and phone number via the flipgemstones.com message system.</p>
-        <p><%= button_to "Add request", add_request_conversations_path(colorgem_id: @colorgem) %></p>
+        <p><%= button_to "Send Request", add_request_conversations_path(colorgem_id: @colorgem), :class => "btn btn-primary" %></p>
       </div>
     </div>
     </div>
     <%= link_to "Back", :back %>
     </section>
     <% end %>
+</div>
 <% else %>
-<p>Interested in the stone? <%= link_to "Please register here for a free account.",  new_user_registration_path %></p>
-<h4>Already have an account? <%= link_to "Please login here.", new_user_session_path %></h4>
+<div class="container nav70">
+    <p>Interested in the stone? <%= link_to "Please register here for a free account.",  new_user_registration_path %></p>
+    <h4>Already have an account? <%= link_to "Please login here.", new_user_session_path %></h4>
+</div>
 <% end %>
 
 
