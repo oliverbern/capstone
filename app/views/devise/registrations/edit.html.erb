@@ -1,3 +1,5 @@
+
+<div class="container nav70">
 <h2>Edit Account Information</h2>
 
 <h4>Current Account Type: <%= current_user.role.capitalize %></h4>
@@ -73,3 +75,4 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
