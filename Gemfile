@@ -30,7 +30,6 @@ gem 'pry-rails'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'newrelic_rpm'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
