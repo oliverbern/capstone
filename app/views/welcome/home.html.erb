@@ -1,3 +1,9 @@
+<% if user_signed_in? %>
+
+you are logged in
+
+
+<% else %>
 <div class="container nav70 jumbotronpart">
     <div class="jumbotron">
         <h1><span class="spanheading">Marketplace for Colored Gemstones</span></h1>
@@ -71,3 +77,4 @@
     </div>
 </div>
 </div>
+<% end %>

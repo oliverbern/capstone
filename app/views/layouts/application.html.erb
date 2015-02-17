@@ -2,22 +2,17 @@
 <html>
 <head>
   <title>Flipgemstones</title>
+  <meta charset="utf-8" />
   <%= render 'layouts/bootstrap' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'custom', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-
-  <script src="//load.sumome.com/" data-sumo-site-id="567e7292e3793067ebc90ae084f2912e8cda7200463f13e58fd2393c4b8f44d5" async></script>
-  
+  <%= csrf_meta_tags %>  
 </head>
 <body>
-  <%= render 'layouts/navbar' %>
-  
-   <%= yield %>
-   
-
- <%= render 'layouts/footer' %>
-
+  	<%= render 'layouts/navbar' %>
+   	<%= yield %>
+ 	<%= render 'layouts/footer' %>
 </body>
 </html>

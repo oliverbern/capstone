@@ -1,0 +1,7 @@
+<% if current_user.role == "admin" %>
+<div class="container">
+<% User.all.each do |user| %>
+	<p><%= user.email %> / <%= user.role %> / <%= user.id %></p>
+<% end %>
+</div>
+<% end %>

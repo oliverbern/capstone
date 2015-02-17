@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   get 'welcome/privacy_policy'
   get 'welcome/testpage'
   get 'charges/upgrade'
-  get 'welcome/homenew'
+  get 'welcome/admin'
   get 'welcome/about'
   #get 'koudoku/index'
   

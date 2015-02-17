@@ -28,7 +28,7 @@
         <p>Clarity: <%= @colorgem.clarity %></p>
         <p>Treatment: <%= @colorgem.treatment %></p>
         <p>Price/ct: <%= @colorgem.price %></p>
-        <p>Total price (CHF): <%= @colorgem.weight.to_i * @colorgem.price.to_i %></p>
+        <p>Total price (CHF): <%= @colorgem.weight * @colorgem.price %></p>
 
         <h3>Measurements</h3>
         <p>Length: <%= @colorgem.length %>mm</p>
