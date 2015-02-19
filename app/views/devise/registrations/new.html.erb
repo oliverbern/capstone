@@ -38,6 +38,8 @@
   <div class="form-group"><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+  <div class="form-group">With submitting your registration, you agree to have read and accepted our <%= link_to "Terms and Conditions", welcome_terms_and_conditions_path, :target =>"_blank" %>.</div>
+
   <div class="form-group"><%= f.submit "Sign up" %></div>
 <% end %>
 
