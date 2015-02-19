@@ -25,8 +25,6 @@ gem 'carrierwave'
 gem 'fog'
 gem "figaro"
 gem 'pry-rails'
-
-
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
