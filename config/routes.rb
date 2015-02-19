@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   get 'welcome/admin'
   get 'welcome/about'
   get 'welcome/imprint'
+  get 'welcome/terms_and_conditions'
   #get 'koudoku/index'
   
 

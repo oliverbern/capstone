@@ -37,6 +37,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 25%;
+	margin-top: 8%;
 
 }
 
@@ -51,7 +52,8 @@ body {
 .categories h1,
 .headadv h1 {
 	color: #81BEF7;
-	margin-bottom: 5%;
+	margin-bottom: 7%;
+	margin-top: 5%;
 }
 
 .imageadv {
@@ -63,10 +65,6 @@ body {
 .Brand {
 	width: 5%;
 	height: auto;
-}
-
-.categories h1 {
-	margin-bottom: 20px;
 }
 
 .spanheading {
@@ -110,4 +108,7 @@ body {
 
 .dropdown {
 	background-color: #81BEF7;
+}
+.footer_text {
+	margin-top: 10%;
 }
