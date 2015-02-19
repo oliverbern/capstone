@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
 <% if current_user.role == "checkuser" %>
 <div class="container nav70">
-    <p>Once your account has been approved you can access all information about stones and send requests. <strong>Activation should happen within 24h.</strong> If you have any questions, please contact the Flipgemstones team at registrations@flipgemstones.com </p>
+    <p>Once your account has been approved you can access all information about stones and send requests. <strong>Activation should happen within 24h.</strong> If you have any questions, please contact the Flipgemstones team at info@flipgemstones.com </p>
     <p>In the meantime, please add all required information to your account <%= link_to "Add Information to my account", edit_user_registration_path %></p>
 </div>
     <% else %>

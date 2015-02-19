@@ -2,6 +2,19 @@
 <div class="container nav70">
 you are logged in
 
+<% if current_user.role == "checkuser" %>
+<p>We currently check your account and submitted information. On average, users get access within 24h after submitting all information. If you have any questions, please contact info@flipgemstones.com for more information. Or call us at +41 (0) 44 586 33 31.</p>
+
+<% else %>
+
+<h2>What do you want to do?</h2>
+
+<h4><%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %></h4>
+<h4><%= link_to "Check Colored Gemstones", colorgems_path %></h4>
+<h4><%= link_to "Check Messages", welcome_mailbox_path %></h4>
+<br>
+<h4>Need help? Contact us at info@flipgemstones.com or call us +41 (0) 44 586 33 31.</h4>
+<% end %>
 </div>
 <% else %>
 <div class="container nav70 jumbotronpart">
@@ -60,7 +73,7 @@ you are logged in
 
     <div class="col-md-4">
         <%= image_tag("gemstonessmall.jpg", :class => "", :alt => "Colored Gemstones at FLIPGEMSTONES") %>
-        <h3>Colored Gemstones</h3>
+        <h3><%= link_to "Colored Gemstones", colorgems_path %></h3>
         <p></p>
     </div>
 
