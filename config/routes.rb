@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get 'charges/upgrade'
   get 'welcome/admin'
   get 'welcome/about'
+  get 'welcome/imprint'
   #get 'koudoku/index'
   
 
