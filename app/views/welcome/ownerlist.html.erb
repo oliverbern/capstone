@@ -11,7 +11,7 @@
             <th>Type of Stone</th>
             <th>Shape</th>
             <th>Weight</th>
-            <th>Status</th>
+            <!-- <th>Status</th> -->
             <th colspan="4"></th>
           </tr>
         </thead>
@@ -22,8 +22,9 @@
             <td><%= colorgem.gemstonetype %></td>
             <td><%= colorgem.shape %></td>
             <td><%= colorgem.weight %></td>
-            <td><%= colorgem.listingstatus %></td>
+            <!-- <td><%= colorgem.listingstatus %></td> -->
             <td><%= link_to 'Show', colorgem %></td>
+            <!--
             <td><%= link_to 'Edit', edit_colorgem_path(colorgem) %></td>
             <td>
               <% if colorgem.active? %>
@@ -39,6 +40,7 @@
              <% end %>
 
            </td>
+           -->
          </tr>
          <% end %>
        </tbody>
@@ -47,16 +49,21 @@
 
      <%= will_paginate @colorgemspag %>
      <p>
-      Download:
+     
+      <% if current_user.role == "admin" %>
+       Download:
       <%= link_to "CSV", welcome_export_path(format: "csv", source: 'colorgem') %> |
       <%= link_to "Excel", welcome_export_path(format: "xls",source: 'colorgem') %> |<br>
+      <% end %>
       <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
     </p>
+    <% if current_user.role == "admin" %>
     <h2>Import Colored Gems</h2>
     <%= form_tag welcome_import_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= hidden_field_tag(:source, "colorgems") %>
     <%= submit_tag "Import" %>
+    <% end %>
     <% end %>
     <% else %>
     <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>

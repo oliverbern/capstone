@@ -49,11 +49,4 @@ class Welcome < ActiveRecord::Base
 		else raise "Unknown file type: #{file.original_filename}"
 		end
 	end
-
-
-
-
-
-
-
 end

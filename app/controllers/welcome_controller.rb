@@ -8,20 +8,17 @@ class WelcomeController < ApplicationController
 		@diamondspag = @diamonds.paginate(page: params[:page], per_page: 10)
 		@jewelleriespag = @jewelleries.paginate(page: params[:page], per_page: 10)
 		@colordiamondspag = @colordiamonds.paginate(page: params[:page], per_page: 10)   
-
-		respond_to do |format|
-			format.html	
-		end
 	end
 
 	def export
-       model_name = params[:source].capitalize
-       stones = model_name.constantize.where(user: current_user)
+		@colorgems = Colorgem.where(user_id: current_user.id)
+       #model_name = params[:source].capitalize
+       #stones = model_name.where(user: current_user)
 
 	   #csv_output = instance_variable_get("@#{params[:source] || 'colorgems'}")
        respond_to do |format|	
-			format.csv { send_data stones.to_csv}
-			format.xls { send_data stones.to_csv(col_sep: "\t") }
+			format.csv { send_data @colorgems.to_csv}
+			format.xls { send_data @colorgems.to_csv(col_sep: "\t") }
 		end
 
 	end
