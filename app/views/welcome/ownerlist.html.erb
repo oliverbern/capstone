@@ -52,8 +52,8 @@
      
       <% if current_user.role == "admin" %>
        Download:
-      <%= link_to "CSV", welcome_export_path(format: "csv", source: 'colorgem') %> |
-      <%= link_to "Excel", welcome_export_path(format: "xls",source: 'colorgem') %> |<br>
+      <%= link_to "CSV", welcome_export_path(format: "csv") %> |
+      <%= link_to "Excel", welcome_export_path(format: "xls") %> |<br>
       <% end %>
       <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
     </p>
