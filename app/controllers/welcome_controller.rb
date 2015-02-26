@@ -9,10 +9,6 @@ class WelcomeController < ApplicationController
 		@jewelleriespag = @jewelleries.paginate(page: params[:page], per_page: 10)
 		@colordiamondspag = @colordiamonds.paginate(page: params[:page], per_page: 10)   
 	
-		respond_to do |format|	
-			format.csv { send_data @colorgems.to_csv}
-			format.xls { send_data @colorgems.to_csv(col_sep: "\t") }
-		end
 
 
 	end
