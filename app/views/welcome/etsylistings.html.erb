@@ -1,0 +1,55 @@
+<script type="text/javascript">
+(function($){
+
+    $(document).ready(function(){
+        $('#etsy-search').bind('submit', function() {
+            api_key = "vm6040kpugtf78oayh6crixx";
+            terms = $('#etsy-terms').val();
+            etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=loose -glass -synthetic "+
+                terms+"&limit=20&includes=Images:1&category=loose_gemstones&api_key="+api_key;
+
+            $('#etsy-images').empty();
+            $('<p></p>').text('Searching for '+terms).appendTo('#etsy-images');
+
+            $.ajax({
+                url: etsyURL,
+                dataType: 'jsonp',
+                success: function(data) {
+                    if (data.ok) {
+                        $('#etsy-images').empty();
+                        if (data.count > 0) {
+                            $.each(data.results, function(i,item) {
+                                $('#etsy-category').append(
+                                    '<tr><td>'+'<img src='+item.Images[0].url_170x135+'></td><td class="vert-align">'+'<strong>'+item.title.substring(0,50)+'</strong></td><td class="vert-align">'
+                                    +item.description.substring(0,150)+'</td><td><a href="'+item.url+'" target="_blank" class="btn btn-primary btn-lg">Visit on Etsy</a></td></tr>');
+                                if (i%4 == 0) {
+                                    $('<br/>').appendTo('#etsy-images');
+                                }
+                            });
+                        } else {
+                            $('<p>No results.</p>').appendTo('#etsy-images');
+                        }
+                    } else {
+                        $('#etsy-images').empty();
+                        alert(data.error);
+                    }
+                }
+            });
+
+            return false;
+        })
+    });
+
+})(jQuery);
+</script>
+<div class="container nav70">
+	<form id="etsy-search">
+	        <input id="etsy-terms" size="32">
+	        <button>Find on Etsy</button>
+	 </form>
+	 </br>
+	<div>
+	    <table id="etsy-category" class="table table-hover table-condensed table-striped table-responsive">
+		</table> 
+	</div>
+</div>
