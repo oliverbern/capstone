@@ -80,7 +80,7 @@ you are logged in
                 <div class="col-md-4 catdescriptionhomepage">
                     <h4>Colored Gemstones</h4>
                     <p>Get a free account today to browse through the available stones. Upgrade to list your own stones and start selling your stones globally. Need help? Contact us, we are here to help you.</p>
-                    <%= link_to "Check available listings", colorgems_path, :class => "btn btn-primary btn-sm" %>
+                    <%= link_to "Check available listings", colorgems_path, :class => "btn btn-primary" %>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -90,7 +90,7 @@ you are logged in
                 <div class="col-md-4 catdescriptionhomepage">
                     <h4>Diamonds</h4>
                     <p>Coming Soon. Be one of the frist to get the listings published on Flipgemstones and contact us via email to arrange import and access.</p>
-                    <a href="mailto:admin@flipgemstones.com?Subject=My Diamonds%20on%20Flipgemstones" target="_top" class="btn btn-primary btn-sm">Be First. Contact Us Now!</a>
+                    <a href="mailto:admin@flipgemstones.com?Subject=My Diamonds%20on%20Flipgemstones" target="_top" class="btn btn-primary">Be First. Contact Us Now!</a>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -100,7 +100,7 @@ you are logged in
                 <div class="col-md-4 catdescriptionhomepage">
                     <h4>Jewellery</h4>
                     <p>Coming Soon. Be one of the frist to get the listings published on Flipgemstones and contact us via email to arrange import and access.</p>
-                    <a href="mailto:admin@flipgemstones.com?Subject=My Jewellery%20on%20Flipgemstones" target="_top" class="btn btn-primary btn-sm">Be First. Contact Us Now!</a>
+                    <a href="mailto:admin@flipgemstones.com?Subject=My Jewellery%20on%20Flipgemstones" target="_top" class="btn btn-primary">Be First. Contact Us Now!</a>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -113,14 +113,14 @@ you are logged in
                 <div class="col-md-3">
                     <h4>Contact Us</h4>
                     <p>Email: admin@flipgemstones.com</p>
-                    <p>Call Us: +41XXXXXXXXXXX</p>
+                    <p>call us: <a href="tel:+41445863331">+41 (0) 44 586 33 31</a></p>
                 </div>
                 <div class="col-md-3">
                     <h4>Information</h4>
                     <ul>
-                        <li><%= link_to "About us", root_path %></li>
-                        <li><%= link_to "Privacy Policy", root_path %></li>
-                        <li><%= link_to "Terms & Conditions", root_path %></li>
+                        <li><%= link_to "About us", welcome_about_path %></li>
+                        <li><%= link_to "Disclaimer", welcome_imprint_path %></li>
+                        <li><%= link_to "Terms & Conditions", welcome_terms_and_conditions_path %></li>
                         <li><%= link_to "Payment & Membership", root_path %></li>
                     </ul>
                 </div>
@@ -135,9 +135,8 @@ you are logged in
                 <div class="col-md-3">
                     <h4>Social Media</h4>
                     <ul>
-                        <li><%= link_to "Support", root_path %></li>
-                        <li><%= link_to "Import Support", root_path %></li>
-                        <li><%= link_to "Matching Service", root_path %></li>
+                        <li><%= link_to "Twitter", root_path %></li>
+                        <li><%= link_to "Facebook", root_path %></li>
                     </ul>
                 </div>
             </div>
