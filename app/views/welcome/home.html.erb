@@ -17,77 +17,132 @@ you are logged in
 <% end %>
 </div>
 <% else %>
-<div class="container nav70 jumbotronpart">
-    <div class="jumbotron">
-        <h1><span class="spanheading">Marketplace for Colored Gemstones</span></h1>
-        <p><span class="spansub">Unique opportunity to display your stones</span></p>
-        <p><%= link_to "Sign Up Now", new_user_registration_path, :class => "btn btn-primary btn-lg bluesignup" %></p>
-    </div>
-</div>
 
-<div class="container nav70 advantagespart">
-<div class="row">
-    <div class="col-md-12 headadv">
-        <h1>How can Flipgemstones help me?</h1>
+    <div id="slider">
+        <div class="container">
+            <h1 id="mainheading">Marketplace for Gemstones</h1>
+            <h3 id="subheading">Unique opportunity to display your stones</h3>
+            <%= link_to "Sign Up Now", new_user_registration_path, :class => "btn btn-default btn-lg" %>
+        </div>
     </div>
 
-    <div class="col-md-3 advpoint">
-        <%= image_tag("secure.svg", :class => "imageadv", :alt => "Secure Community at FLIPGEMSTONES.COM") %>
-        <h3>Community</h3>
-        <p>Anyone who wants to participate in the exchange on Flipgemstones has to register and get approved before getting access to information about the stones.</p>
-        
-    </div>
-
-    <div class="col-md-3 advpoint">
-        <%= image_tag("business.svg", :class => "imageadv", :alt => "Increase your Gemstone Turnover with FLIPGEMSTONES.COM") %>
     
-        <h3>Business</h3>
-        <p>Flipgemstones will help you to increase visibility of your gemstones and find new buyers.</p>
-        
+    <div id="howflipgemstoneshelp">
+        <div class="container">
+            <h2 class="homeheading">How can Flipgemstones help me?</h2>
+            <div class="row">
+                  <div class="col-md-6">
+                      <div class="col-md-3 helpimghome">
+                          <%= image_tag("secure.svg", :class => "imageadv", :alt => "Secure Community at FLIPGEMSTONES.COM") %>
+                      </div>
+                      <div class="col-md-9">
+                          <h4>Community</h4>
+                          <p>Anyone who wants to participate in the exchange on Flipgemstones has to register and get approved before getting access to information about the stones.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="col-md-3 helpimghome">
+                          <%= image_tag("business.svg", :class => "imageadv", :alt => "Increase your Gemstone Turnover with FLIPGEMSTONES.COM") %>
+                      </div>
+                      <div class="col-md-9">
+                          <h4>Business</h4>
+                          <p>Anyone who wants to participate in the exchange on Flipgemstones has to register and get approved before getting access to information about the stones.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="col-md-3 helpimghome">
+                          <%= image_tag("search.svg", :class => "imageadv", :alt => "Use Searchfunction from FLIPGEMSTONES.COM") %>
+                      </div>
+                      <div class="col-md-9">
+                          <h4>Search &#38; Find</h4>
+                          <p>Anyone who wants to participate in the exchange on Flipgemstones has to register and get approved before getting access to information about the stones.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="col-md-3">
+                          <%= image_tag("support.svg", :class => "imageadv", :alt => "Get support if you get stucks") %>
+                      </div>
+                      <div class="col-md-9">
+                          <h4>Support</h4>
+                          <p>Anyone who wants to participate in the exchange on Flipgemstones has to register and get approved before getting access to information about the stones.</p>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="flipgemstonescategory">
+        <div class="container">
+            <h2 class="homeheading">Categories on Flipgemstones</h2>
+            <div class="deviderhomepage"></div>
+            <div class="row">
+                <div class="col-md-6 coloredgemhomepage"></div>
+                <div class="col-md-4 catdescriptionhomepage">
+                    <h4>Colored Gemstones</h4>
+                    <p>Get a free account today to browse through the available stones. Upgrade to list your own stones and start selling your stones globally. Need help? Contact us, we are here to help you.</p>
+                    <button>Check out our available listings</button>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="deviderhomepage"></div>
+            <div class="row">
+                <div class="col-md-6 diamondshomepage"></div>
+                <div class="col-md-4 catdescriptionhomepage">
+                    <h4>Diamonds</h4>
+                    <p>Coming Soon. Be one of the frist to get the listings published on Flipgemstones and contact us via email to arrange import and access.</p>
+                    <button>Be First. Contact us now!</button>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="deviderhomepage"></div>
+            <div class="row">
+                <div class="col-md-6 jewelleryhomepage "></div>
+                <div class="col-md-4 catdescriptionhomepage">
+                    <h4>Jewellery</h4>
+                    <p>Coming Soon. Be one of the frist to get the listings published on Flipgemstones and contact us via email to arrange import and access.</p>
+                    <button>Be First. Contact us now!</button>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>   
     </div>
 
-    <div class="col-md-3 advpoint">
-        <%= image_tag("search.svg", :class => "imageadv", :alt => "Use Searchfunction from FLIPGEMSTONES.COM") %>
-         <h3>Search &#38; Find</h3>
-        <p>With Flipgemstones you always have gemstones at your disposal. Contact buyers directly and select for a great range of available stones.</p>
-        
+    <div id="prefooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Contact Us</h4>
+                    <p>Email: admin@flipgemstones.com</p>
+                    <p>Call Us: +41XXXXXXXXXXX</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><%= link_to "About us", root_path %></li>
+                        <li><%= link_to "Privacy Policy", root_path %></li>
+                        <li><%= link_to "Terms & Conditions", root_path %></li>
+                        <li><%= link_to "Payment & Membership", root_path %></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><%= link_to "Support", root_path %></li>
+                        <li><%= link_to "Import Support", root_path %></li>
+                        <li><%= link_to "Matching Service", root_path %></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><%= link_to "Support", root_path %></li>
+                        <li><%= link_to "Import Support", root_path %></li>
+                        <li><%= link_to "Matching Service", root_path %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="col-md-3 advpoint">
-        <%= image_tag("support.svg", :class => "imageadv", :alt => "Get support if you get stucks") %>
-        <h3>Support</h3>
-        <p>Need help? Contact us for any question you might have. 24/7.</p>
-        
-
-    </div>
-</div>
-</div>
-
-
-<div class="container nav70 categories">
-<div class="row">
-
-    <div class="col-md-12">
-        <h1>Categories on Flipgemstones</h1>
-    </div>
-
-    <div class="col-md-4">
-        <%= image_tag("gemstonessmall.jpg", :class => "", :alt => "Colored Gemstones at FLIPGEMSTONES") %>
-        <h3><%= link_to "Colored Gemstones", colorgems_path, :class=>"heading_cat" %></h3>
-        <p></p>
-    </div>
-
-    <div class="col-md-4">
-        <%= image_tag("diamonds.jpg", :class => "", :alt => "Diamonds at FLIPGEMSTONES") %>
-        <h3>Diamonds</h3>
-        <p></p>
-    </div>
-
-    <div class="col-md-4">
-        <%= image_tag("jewellery.jpg", :class => "", :alt => "Jewellery at FLIPGEMSTONES") %>
-        <h3>Jewellery</h3>
-        <p></p>
-    </div>
-</div>
-</div>
 <% end %>
+
+

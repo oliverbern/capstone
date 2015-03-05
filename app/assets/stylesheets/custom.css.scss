@@ -1,25 +1,12 @@
 /* CSS FOR HOMEPAGE */
-
-body {
-	background-color: #EBEBEB;
-}
-
-
-
-.bluesignup {
-	background-color: #81BEF7;
-	border-color: #81BEF7;
-}
-
 .imagelogo {
-	width: 130px;
+	width: 200px;
 	height: auto;
 }
 
 .navbar-brand {
 	padding-top: 3%;
 }
-
 
 .logopos {
 	margin-top: 50%;
@@ -35,46 +22,10 @@ body {
 	margin: 0 auto;
 }
 
-
-.jumbotron {
-	background-image: image-url('homebackground.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 25%;
-}
-
-.advantagespart h1 {
-	margin-bottom: 20px;
-}
-
-.advpoint h3 {
-	margin-bottom: 2%;
-}
-
-.categories h1,
-.headadv h1 {
-	color: #81BEF7;
-	margin-bottom: 7%;
-	margin-top: 5%;
-}
-
 .imageadv {
-	width: 130px;
+	width: 80px;
 	height: auto;
 	text-align: center;
-}
-
-.Brand {
-	width: 5%;
-	height: auto;
-}
-
-.spanheading {
-   	color: #fff;
-}
-
-.spansub {
-   	color: #fff;
 }
 
 .imgshowgem {
@@ -116,9 +67,7 @@ body {
 }
 
 
-table .vert-align {
- 	vertical-align: middle;
- }
+
 
 /* Sticky Footer */
 
@@ -135,5 +84,128 @@ table .vert-align {
 .heading_cat {
  	color: #81BEF7;
  }
+
+
+
+
+
+/* Re-Design */
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+	margin-bottom: 0;
+	height: 75px;
+}
+
+#mainheading {
+	font-size: 5em;
+	padding-top: 8%;
+}
+
+#subheading {
+	padding-bottom: 1.5%;
+}
+
+#slider {
+	background-image: image-url('flipgemstones_background_slider.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 400px;
+	-webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+    font-family: open-sans;
+}
+
+.homeheading {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	padding: 7% 0;
+}
+
+.deviderhomepage {
+	border-top: 1px solid #e2e2e2;
+	margin: 1% 0;
+}
+
+.helpimghome {
+	align-content: center;
+}
+
+.colorgemhomeimage {
+	text-align: right;
+}
+
+
+.jewelleryhomepage {
+	background-image: image-url('Depositphotos_8118570_original.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 400px;
+	background-position: right;
+}
+
+.diamondshomepage {
+	background-image: image-url('Depositphotos_3445184_original.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 400px;
+	background-position: right;
+}
+
+.coloredgemhomepage {
+	background-image: image-url('Depositphotos_8110132_original.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 400px;
+	background-position: right;
+}
+
+.catdescriptionhomepage {
+	height: 400px;
+	align-content: flex-start;
+	padding-top: 10%;
+}
+
+.catdescriptionhomepage h4 {
+	font-size: 3.5em;
+}
+
+
+#prefooter {
+	background-color: #f6f6f6;
+	border-top: 1px solid #e2e2e2;
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 50px;
+}
+
+#prefooter li {
+	list-style: none;
+}
+
+#prefooter ul {
+	padding-left: 0;
+}
+
+.navbar-fixed-bottom {
+	max-height: 50px;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: white;
+}
+
+.navbar-fixed-bottom p {
+	padding-top: 1.3%;
+}
+
+
+
+
+
 
 
