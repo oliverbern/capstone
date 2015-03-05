@@ -211,7 +211,21 @@ body {
 /* Media Queries for Support Design */
 
 @media (max-width: 1025px) { 
+	#slider {
+		background-image: none;
+		color: black;
+	}
 
+	.jewelleryhomepage, .diamondshomepage, .coloredgemhomepage {
+	height: 150px;
+	background-position: center;
+	}
+
+	.catdescriptionhomepage {
+	height: 200px;
+	align-content: flex-start;
+	padding-top: 0%;
+}
  }
 
 
