@@ -214,6 +214,11 @@ body {
 	#slider {
 		background-image: none;
 		color: black;
+		height: 300px;
+	}
+
+	#mainheading {
+		font-size: 3em;
 	}
 
 	.jewelleryhomepage, .diamondshomepage, .coloredgemhomepage {
@@ -235,6 +240,10 @@ body {
 
 	.deviderhomepage {
 		display: none;
+	}
+
+	.catdescriptionhomepage h4 {
+		font-size: 1.5em;
 	}
 
 
