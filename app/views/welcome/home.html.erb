@@ -22,7 +22,7 @@ you are logged in
         <div class="container">
             <h1 id="mainheading">Marketplace for Gemstones</h1>
             <h3 id="subheading">Unique opportunity to display your stones</h3>
-            <%= link_to "Sign Up Now", new_user_registration_path, :class => "btn btn-default btn-lg" %>
+            <%= link_to "Sign Up Now", new_user_registration_path, :class => "btn btn-primary btn-lg" %>
         </div>
     </div>
 
@@ -80,7 +80,7 @@ you are logged in
                 <div class="col-md-4 catdescriptionhomepage">
                     <h4>Colored Gemstones</h4>
                     <p>Get a free account today to browse through the available stones. Upgrade to list your own stones and start selling your stones globally. Need help? Contact us, we are here to help you.</p>
-                    <button>Check out our available listings</button>
+                    <%= link_to "Check available listings", colorgems_path, :class => "btn btn-primary btn-sm" %>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -90,7 +90,7 @@ you are logged in
                 <div class="col-md-4 catdescriptionhomepage">
                     <h4>Diamonds</h4>
                     <p>Coming Soon. Be one of the frist to get the listings published on Flipgemstones and contact us via email to arrange import and access.</p>
-                    <button>Be First. Contact us now!</button>
+                    <a href="mailto:admin@flipgemstones.com?Subject=My Diamonds%20on%20Flipgemstones" target="_top" class="btn btn-primary btn-sm">Be First. Contact Us Now!</a>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -100,7 +100,7 @@ you are logged in
                 <div class="col-md-4 catdescriptionhomepage">
                     <h4>Jewellery</h4>
                     <p>Coming Soon. Be one of the frist to get the listings published on Flipgemstones and contact us via email to arrange import and access.</p>
-                    <button>Be First. Contact us now!</button>
+                    <a href="mailto:admin@flipgemstones.com?Subject=My Jewellery%20on%20Flipgemstones" target="_top" class="btn btn-primary btn-sm">Be First. Contact Us Now!</a>
                 </div>
                 <div class="col-md-2"></div>
             </div>
