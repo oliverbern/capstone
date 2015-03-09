@@ -13,9 +13,9 @@ class Colorgem < ActiveRecord::Base
 	def self.to_csv(user_id)
     exportgems = Colorgem.where(user_id: user_id)
 		csv_string = CSV.generate do |csv|
-      csv << ["Listing No.", "Type", "Color","Shape", "User ID"]
+      csv << ["gemstonetype", "user_id", "id", "color","shape","length","height","width","weight","image_file_name","gemscertificate","colorbrightness","transparency","clarity","treatment","gemsunit","showprice","image","price","listingstatus","secondcolor"]
       exportgems.each do |item|
-        csv << [item.id, item.gemstonetype, item.color, item.shape, item.user_id]
+        csv << [item.gemstonetype, item.user_id, item.id, item.color, item.shape,item.length,item.height,item.width,item.weight,item.image_file_name,item.gemscertificate,item.colorbrightness,item.transparency,item.clarity,item.treatment,item.gemsunit,item.showprice,item.image,item.price,item.listingstatus,item.secondcolor]
       end
     end
   end 
