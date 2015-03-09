@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  post 'import/colorgemimport'
 
+  get 'export/colorgemexport' #if other actions, add to routes
 
   resources :jewelleries do
   collection { post :import }

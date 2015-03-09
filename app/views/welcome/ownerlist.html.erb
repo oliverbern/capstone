@@ -52,16 +52,15 @@
      
       <% if current_user.role == "admin" %>
        Download:
-      <%= link_to "CSV", welcome_export_path(format: "csv") %> |
-      <%= link_to "Excel", welcome_export_path(format: "xls") %> |<br>
+      <%= link_to "CSV", export_colorgemexport_path(format: 'csv') %> |
+      <%= link_to "Excel", export_colorgemexport_path(format: 'xls') %> |<br>
       <% end %>
       <%= link_to 'Create New Colored Gemstones Listing', new_colorgem_path %>
     </p>
     <% if current_user.role == "admin" %>
     <h2>Import Colored Gems</h2>
-    <%= form_tag welcome_import_path, multipart: true do %>
+    <%= form_tag import_colorgems_path, multipart: true do %>
     <%= file_field_tag :file %>
-    <%= hidden_field_tag(:source, "colorgems") %>
     <%= submit_tag "Import" %>
     <% end %>
     <% end %>

@@ -1,7 +1,5 @@
 class ColorgemsController < ApplicationController
-  
-   
-  before_action :set_colorgem, only: [:show, :edit, :update, :destroy]
+before_action :set_colorgem, only: [:show, :edit, :update, :destroy]
 
 
 
@@ -12,37 +10,25 @@ class ColorgemsController < ApplicationController
       @colorgems = @search.result.paginate(page: params[:page], per_page: 10)
   end
 
-
-
-
   def import
-    Colorgem.import(params[:file], current_user)
-    redirect_to colorgems_path, notice: "Products imported."
+    Colorgem.import(params[:file])
+    redirect_to welcome_ownerlist_path, notice: "import"
   end
 
-  def accessible_attributes
- [gemstonetype, color, shape, length, height, width, weight, gemscertificate]
-  end
 
+  #def import
+    #Colorgem.import(params[:file], current_user)
+    #redirect_to colorgems_path, notice: "Products imported."
+  #end
 
   # GET /colorgems/new
   def new
     @colorgem = Colorgem.new
-    @autogemstonetype = ["Citrin", "Opal"].to_s
-    #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
-    @autoshape = ["Oval"].to_s
-    @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s
-    @autoclarity = ["Loupe-clean", "Eye-clean", "Few, small inclusions visible", "Few, medium inclusions visible", "Few, large inclusions visible", "Many inclusions visible", "A lot of inclusions visible", "No indications"].to_s
-
   end
 
   # GET /colorgems/1/edit
   def edit
-    @autogemstonetype = ["Citrin", "Opal"].to_s
     #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
-    @autoshape = ["Oval"].to_s
-    @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s
-    @autoclarity = []
   end
 
   # POST /colorgems
@@ -75,12 +61,8 @@ class ColorgemsController < ApplicationController
         format.json { render json: @colorgem.errors, status: :unprocessable_entity }
       end
     end
-
-    @autogemstonetype = ["Citrin", "Opal"].to_s
     #Colorgem.group(:shape).map{|item| item.shape }.to_s.html_safe
-    @autoshape = ["Oval"].to_s
-    @autocolor = ["Black", "Blue", "Brown", "Colorless", "Green", "Grey", "Orange", "Pink", "Red", "Violet", "White", "Yellow", "No indications", "Mixed"].to_s
-    @autoclarity = []
+
   end
 
   # DELETE /colorgems/1
