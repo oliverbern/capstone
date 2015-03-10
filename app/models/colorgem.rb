@@ -22,10 +22,11 @@ class Colorgem < ActiveRecord::Base
 
   def self.import(file)
   	CSV.foreach(file.path, headers: true) do |row|
-  		Colorgem.create!(row.to_hash)
+  		Colorgem.create! row.to_hash
   	end
   end
   
 
 
 end
+

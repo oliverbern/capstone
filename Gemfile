@@ -28,6 +28,7 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'table_print'
 
 group :development, :test do
 	gem 'sqlite3'
