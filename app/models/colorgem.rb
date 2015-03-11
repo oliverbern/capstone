@@ -21,12 +21,19 @@ class Colorgem < ActiveRecord::Base
   end 
 
   def self.import(file)
-  	CSV.foreach(file.path, headers: true) do |row|
-  		Colorgem.create! row.to_hash
-  	end
+    index = 1
+    #begin
+
+  	  CSV.foreach(file.path, headers: true) do |row|
+        #index = index + 1
+  		  Colorgem.create! row.to_hash#.merge({user_id: @colorgem.user_id})
+        
+  	  end
+     #rescue UTF8Exception => e
+     #   flash[:error] = "You have UTF( progblem in line #{index+1}. Fix and return."
+     #rescue Exception => e
+     #   flash[:error] = 'I got an unkown error. try again.'
+     #end
   end
-  
-
-
 end
 

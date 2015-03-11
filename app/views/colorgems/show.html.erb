@@ -12,41 +12,65 @@
       <div class="col-md-4">
         <h2><%= @colorgem.weight%>ct <%= @colorgem.gemstonetype %></h2>
         <br>
+        <% if !@colorgem.image.url.blank? %>
         <div class="img-responsive">
             <%= image_tag @colorgem.image.url, :size => "200x200", :class => "imgshowgem" %>
           </div>
+          <% end %>
       </div>
 
     <div class="col-md-8">
       <h2></h2>
       <div class="col-md-4">
         <h4>General Information</h4>
-        <p>Category: <%= @colorgem.gemstonetype %></p>
-        <p>Weight: <%= @colorgem.weight %></p>
+        <p>Gemstone: <%= @colorgem.gemstonetype %></p>
+        <p>Weight: <%= @colorgem.weight %>ct</p>
         <p>Shape: <%= @colorgem.shape %></p>
         <p>Color: <%= @colorgem.color %></p>
-        <p>Clarity: <%= @colorgem.clarity %></p>
-        <p>Treatment: <%= @colorgem.treatment %></p>
-        <p>Price/ct: <%= @colorgem.price %></p>
-        <p>Total price (CHF): <%= @colorgem.weight * @colorgem.price %></p>
+        <% if !@colorgem.clarity.blank? %>
+            <p>Clarity: <%= @colorgem.clarity %></p>
+        <% end %>
+        <% if ! @colorgem.treatment.blank? %>
+            <p>Treatment: <%= @colorgem.treatment %></p>
+        <%end%>
+        <% if !@colorgem.price.blank? %>
+            <p>Price/ct: <%= @colorgem.price %></p>
+            <p>Total price (CHF): <%= @colorgem.weight * @colorgem.price %></p>
+        <% end %>
 
-        <h3>Measurements</h3>
+        <h4>Measurements</h4>
         <p>Length: <%= @colorgem.length %>mm</p>
         <p>Width: <%= @colorgem.width %>mm</p>
-        <p>Height: <%= @colorgem.height %>mm</p>
-        <p>No. of stones: <%= @colorgem.gemsunit %></p>
+        <% if !@colorgem.height %>
+            <p>Height: <%= @colorgem.height %>mm</p>
+        <% end %>
+        <% if !@colorgem.gemsunit %>
+            <p>No. of stones: <%= @colorgem.gemsunit %></p>
+        <% end %>
       </div>
 
       <div class="col-md-4">
+      <% if !!@colorgem.colorbrightness.blank? && !@colorgem.secondcolor.blank? && !@colorgem.transparency.blank? %>
         <h4>Additional Information</h4>
-        <p>Color Brightness: <%= @colorgem.colorbrightness %></p>
-        <p>Second Color: <%= @colorgem.secondcolor %></p>
-        <p>Transparency: <%= @colorgem.transparency %></p>
-
+    <% end %>
+        <%if !@colorgem.colorbrightness.blank? %>
+            <p>Color Brightness: <%= @colorgem.colorbrightness %></p>
+        <%end%>
+        <% if !@colorgem.secondcolor.blank? %>
+            <p>Second Color: <%= @colorgem.secondcolor %></p>
+        <%end%>
+        <% if !@colorgem.transparency.blank? %>
+            <p>Transparency: <%= @colorgem.transparency %></p>
+        <% end %>
         <h3>Request Stone</h3>
         <p>The owner of the stone will receive a message with your company name, email and phone number via the flipgemstones.com message system.</p>
         <p><%= button_to "Send Request", add_request_conversations_path(colorgem_id: @colorgem), :class => "btn btn-primary" %></p>
       </div>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <h5>Want more information? Is information about this stone missing?</h5>
+        <a href="mailto:admin@flipgemstones.com?Subject=request information: <%= @colorgem.gemstonetype %>, id: <%= @colorgem.id %>,ct: <%= @colorgem.weight %>" target="_top" class="btn btn-primary">Send us an Email</a>
     </div>
     </div>
     <%= link_to "Back", :back %>
