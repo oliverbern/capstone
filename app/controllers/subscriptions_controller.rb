@@ -10,4 +10,5 @@ class SubscriptionsController < ApplicationController
 
 	def colorgem_params
       params.require(:subscription).permit(:plan, :card)
+  end
 end
