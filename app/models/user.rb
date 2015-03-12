@@ -26,6 +26,15 @@ class User < ActiveRecord::Base
   def name
   	email
   end
-
+    
+  def create_customer(options)
+    options.stringify_keys!
+    options['email'] = email
+    if stripeid.blank?
+        customer = Stripe::Customer.create(options)
+        update_attribute(:stripeid, customer.id)
+        return customer
+    end
+  end
 
 end

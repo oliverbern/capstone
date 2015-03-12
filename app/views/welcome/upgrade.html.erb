@@ -18,9 +18,21 @@
               <li class="list-group-item"><i class="icon-ok text-danger"></i> Upload up to 50 stones</li>
               </ul>
     <div class="panel-footer">
-     <%= form_tag charges_path do %>
+     <%= form_tag customers_path do %>
    <h4>Upgrade Now!</h4>
-   <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description=="<%= @stripe_btn_data[:description] %>" ></script>
+
+  <div class='form-group'>
+    <%= select_tag 'customer[plan]', options_for_select([['Gold', 'gold_month'], ['SILVER', 'silver_month']]), :class => 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= hidden_field_tag "customer[source][object]", 'card' %>
+    <%= text_field_tag "customer[source][number]", nil, :placeholder => 'Card number', :class => 'form-control' %>
+    <%= select_tag "customer[source][exp_month]", options_for_select([['January', '01'], ['FEBRUARY', '01']]), :class => 'form-control' %>
+    <%= select_tag "customer[source][exp_year]", options_for_select([2015,2016,2017]), :class => 'form-control' %>
+  </div>
+
+  <%= submit_tag "Sign me up!", :class => 'btn btn-lg btn-block', :data => {:disable_with => 'Submitting...'} %>
  <% end %>
   </div>
  </div>
@@ -40,7 +52,7 @@
               <li class="list-group-item"><i class="icon-ok text-danger"></i> Premium Support</li>
             </ul>
     <div class="panel-footer">
-    <a class="btn btn-lg btn-block btn-danger" href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
+    <a class="btn btn-lg btn-block btn-danger"">BUY NOW!</a>
   </div>
  </div>
 

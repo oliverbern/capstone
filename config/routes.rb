@@ -57,6 +57,8 @@ Rails.application.routes.draw do
   #get 'koudoku/index'
   
 
+  resources :customers, only: [:create]
+
   resources :charges, only: [:new, :create]
 
   root 'welcome#home'
