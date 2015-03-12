@@ -1,6 +1,6 @@
 class Subscription < ActiveRecord::Base
 	validates_presence_of :plan_id, :user
-	#attr_accesor :card
+	attr_accesor :card
 
 	def process!
 		if !user.customer

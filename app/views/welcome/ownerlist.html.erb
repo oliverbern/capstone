@@ -50,7 +50,7 @@
      <%= will_paginate @colorgemspag %>
      <p>
      
-      <% if current_user.role == "admin" %>
+      <% if current_user.role == 4 %>
        Download:
       <%= link_to "CSV", export_colorgemexport_path(format: 'csv') %> |
       <%= link_to "Excel", export_colorgemexport_path(format: 'xls') %> |<br>

@@ -9,6 +9,6 @@ class SubscriptionsController < ApplicationController
 	private 
 
 	def subscription_params
-      params.require(:subscription).permit(:plan, :card)
+      params.require(:subscription).permit(:plan, :card => {})
   end
 end
