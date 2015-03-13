@@ -8,7 +8,7 @@ class SubscriptionsController < ApplicationController
 
 	private 
 
-	def subscription_params
+	def customer_params
       params.require(:subscription).permit(:plan, :card => {})
   end
 end
